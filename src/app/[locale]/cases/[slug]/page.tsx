@@ -14,15 +14,16 @@ export function generateStaticParams() {
   ];
 }
 
-export default function CasePage({
+export default async function CasePage({
   params,
 }: {
-  params: { locale: string; slug: string };
+  params: Promise<{ locale: string; slug: string }>;
 }) {
-  if (!isLocale(params.locale)) notFound();
-  const locale = params.locale as Locale;
+  const { locale: rawLocale, slug } = await params;
+  if (!isLocale(rawLocale)) notFound();
+  const locale = rawLocale as Locale;
   const content = getContent(locale);
-  const item = getCaseBySlug(locale, params.slug);
+  const item = getCaseBySlug(locale, slug);
   if (!item) notFound();
 
   return (
