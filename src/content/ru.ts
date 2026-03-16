@@ -2,13 +2,13 @@ import type { Content } from "@/content/types";
 
 export const ru: Content = {
   meta: {
-    title: "Maxim Dudnik — AI Operations / Program Manager (AI initiatives)",
+    title: "Maksym Dudnyk — Business Operations & AI Automation",
     description:
-      "Резюме‑лендинг на RU/EN + кейсы: AI operations, delivery, координация и внедрения.",
+      "Business Operations & AI Automation Specialist: системы, процессы и внедрение AI.",
     siteUrl: ""
   },
   header: {
-    brand: "Maxim Dudnik",
+    brand: "Maksym Dudnyk",
   },
   nav: {
     about: "Обо мне",
@@ -17,77 +17,257 @@ export const ru: Content = {
     contact: "Контакты",
   },
   hero: {
-    kicker: "AI Operations • Координация • Исполнение",
-    title: "AI Operations / Program Manager (AI initiatives)",
+    kicker: "Business Operations & AI Automation Specialist",
+    title: "Maksym Dudnyk",
     subtitle:
-      "Бэкграунд: IT‑рекрутинг и проектная координация. Сейчас в стартапе как AI Operations: превращаю хаос в план, синхронизирую CEO/COS, собираю автоматизации и довожу инициативы до результата.",
-    highlights: ["Правая рука CEO/COS", "Внедрение ИИ", "Автоматизации", "Операционка", "Delivery"],
-    primaryCta: { label: "Написать на email", href: "mailto:dudnyk.maksym@gmail.com" },
-    secondaryCta: { label: "Telegram", href: "https://t.me/maxximilyan" },
+      "Превращаю операционный хаос в масштабируемые системы, ясные процессы и AI‑поддержанное исполнение. Помогаю стартапам строить операционную основу через улучшение процессов, внедрение AI и автоматизацию внутренних workflow.",
+    highlights: [
+      "Операционная база",
+      "Внедрение AI",
+      "Автоматизация",
+      "Системный подход",
+      "Execution"
+    ],
+    primaryCta: { label: "Смотреть проекты", href: "#cases" },
+    secondaryCta: { label: "Связаться", href: "#contact" },
+    tertiaryCta: { label: "Скачать резюме", href: "#" },
   },
   about: {
     title: "Обо мне",
-    subtitle:
-      "AI Operations с фокусом на исполнение: перевожу цели в delivery, синхронизирую стейкхолдеров и довожу AI‑инициативы до результата.",
+    subtitle: "Работаю на стыке операций, систем и внедрения AI.",
     blockTitle: "Что я делаю",
     bullets: [
-      "Перевожу цели в план: сроки, ответственные, weekly‑прогресс и контроль исполнения.",
-      "Внедряю ИИ в реальные процессы: discovery → пилот → rollout → итерации, с метриками и надежностью.",
-      "Сшиваю стейкхолдеров: CEO, COS, инженеры, ops, подрядчики.",
-      "Собираю автоматизации (no/low‑code + скрипты) и описываю процессы (SOP).",
-      "Закрываю цикл: метрики, фидбек, улучшения, качество.",
+      "Business Operations — улучшаю процессы и создаю структуру там, где всё фрагментировано.",
+      "AI Implementation — внедряю AI в внутренние системы так, чтобы это экономило время и помогало исполнению.",
+      "Workflow Automation — строю автоматизации на API, webhooks, AI и no‑code.",
+      "Systems & Process Design — заменяю неэффективные схемы и создаю масштабируемую основу.",
+    ],
+  },
+  impact: {
+    title: "Impact Snapshot",
+    items: [
+      { value: "3.5+ лет", label: "Опыт в startup operations" },
+      { value: "51 user", label: "Внедрён AI knowledge bot" },
+      { value: "480 / нед", label: "Сообщений обработано" },
+      { value: "22 часа", label: "Сэкономлено за 3 дня" },
+      { value: "6+ дней", label: "Сэкономлено в неделю" },
+      { value: "28 → 15", label: "Jira boards сокращено" },
+    ],
+  },
+  workingStyle: {
+    title: "Как я работаю",
+    subtitle: "Максимально эффективен там, где нужно быстро навести порядок и масштабироваться.",
+    bullets: [
+      "Команды двигаются быстро и меняются",
+      "Документация хаотична или устаревает",
+      "Процессы слишком завязаны на людей",
+      "Операциям нужна структура и масштабируемость",
+      "Не просто PM — я строю и внедряю системы",
+    ],
+  },
+  tools: {
+    title: "Инструменты",
+    items: [
+      "n8n",
+      "RunBear",
+      "OpenAI",
+      "Claude",
+      "Gemini",
+      "Rovo",
+      "Supabase",
+      "Firecrawl",
+      "Slack",
+      "HubSpot",
+      "Jira",
+      "Confluence",
+      "APIs",
+      "Webhooks",
+      "Google Sheets",
+      "ATS systems",
+      "HRIS systems",
+      "Dashboards",
+      "Reddit API",
     ],
   },
   skills: {
     title: "Навыки / инструменты",
     items: [
-      "AI Ops",
-      "Project coordination",
-      "Project management (опыт)",
-      "Коммуникация со стейкхолдерами",
-      "Процессы и SOP",
-      "Автоматизация",
-      "Документация",
-      "IT recruiting",
+      "Business Operations",
+      "AI Automation",
+      "Process Design",
+      "Systems Thinking",
+      "Stakeholder Alignment",
+      "Knowledge Management",
+      "Cross-functional Execution",
     ],
   },
   cases: {
     title: "Выбранные кейсы",
-    subtitle: "Лучше 2–5 сильных кейсов с результатом в цифрах.",
-    hint: "Открой кейс — там структура →",
+    subtitle: "Проекты на стыке AI, автоматизации и операционной инфраструктуры.",
+    hint: "Открой кейс — подробности внутри →",
     items: [
       {
-        slug: "ai-ops-right-hand",
-        title: "AI Ops как «правая рука»: от идеи до rollout",
+        slug: "ai-knowledge-infrastructure",
+        title: "AI Knowledge Infrastructure for Internal Operations",
         summary:
-          "Спроектировал и провел внедрение ИИ в внутренние workflows: выявление проблем → пилот → запуск → обучение → итерации, с фокусом на согласование и надежность.",
-        impact: "Impact: замени на метрики (время, деньги, adoption, скорость циклов).",
-        role: "AI Operations / Project Coordinator",
-        stack: "LLM, промпты, внутренние инструменты, автоматизации (уточнить).",
-        timeline: "2025 — н.в. (уточнить).",
-        tags: ["Внедрение ИИ", "Операционка", "Delivery", "Стейкхолдеры"],
+          "Создал структурированную базу знаний и запустил AI‑бота в Slack, подключенного к ключевым системам.",
+        impact: "51 users, 480 weekly messages, 6+ workdays saved per week",
+        role: "AI Operations / Systems Builder",
+        stack: "RunBear, Slack, HubSpot, Jira, Confluence, Zoom, Google Calendar, Aloware MCP",
+        timeline: "2024 — 2025",
+        tags: ["Knowledge infrastructure", "AI bot", "Operations"],
         body: [
           {
             title: "Контекст",
             paragraphs: [
-              "3–5 предложений: что происходило и почему это было важно.",
-              "Конкретика: кто страдал, что ломалось, какие риски/стоимость.",
+              "Документация была разбросана по разным инструментам без единой структуры.",
+              "Чтобы получить ответ, людям приходилось писать коллегам и разбираться вручную.",
             ],
           },
           {
             title: "Что сделал",
-            paragraphs: ["Опиши действия как последовательность шагов."],
+            paragraphs: ["Сначала выстроил документационную основу, затем превратил её в AI‑систему."],
             bullets: [
-              "Интервью со стейкхолдерами и формулировка проблемы",
-              "Скоуп пилота + метрики успеха",
-              "Реализация + rollout + обучение",
-              "Мониторинг / фидбек / итерации",
+              "Реорганизовал Confluence и навёл структуру",
+              "Улучшил стандарты документирования",
+              "Построил Slack‑бота с доступом к HubSpot, Jira, Confluence, Zoom, Google Calendar и Aloware MCP",
             ],
           },
           {
             title: "Результат",
-            paragraphs: ["Добавь измеримые outcomes. Даже приблизительно — уже ок."],
-            bullets: ["Пример: сократил время на X%", "Пример: улучшил качество/консистентность"],
+            paragraphs: ["Ответы стали доступны за секунды, а зависимость от «носителей знаний» снизилась."],
+            bullets: [
+              "22 часа сэкономлено за первые 3 дня (13 users)",
+              "Масштабировано до 51 users и 480 сообщений в неделю",
+              "6+ рабочих дней экономии в неделю",
+            ],
+          },
+        ],
+      },
+      {
+        slug: "reddit-intelligence-workflow",
+        title: "Reddit Intelligence Workflow for Market Insight",
+        summary:
+          "Построил систему, которая превращает обсуждения на Reddit в структурированные инсайты о рынке.",
+        impact: "Открыл новое направление; создана отдельная роль",
+        role: "Ops / Automation Lead",
+        stack: "n8n, Supabase, Google Sheets, OpenAI, Reddit API, Slack",
+        timeline: "2024",
+        tags: ["Market intelligence", "Automation", "AI search"],
+        body: [
+          {
+            title: "Контекст",
+            paragraphs: [
+              "AI‑поиск начал активно использовать Reddit как источник ответов.",
+              "Reddit стал стратегическим каналом для понимания боли клиентов и рынка.",
+            ],
+          },
+          {
+            title: "Что сделал",
+            paragraphs: ["Предложил Reddit как канал intelligence и построил workflow."],
+            bullets: [
+              "Сбор обсуждений по ключевым словам и конкурентам",
+              "Структурирование инсайтов для контент‑ и продуктовых решений",
+              "Регулярный поток сигналов для команды",
+            ],
+          },
+          {
+            title: "Результат",
+            paragraphs: ["Проект открыл новое стратегическое направление."],
+          },
+        ],
+      },
+      {
+        slug: "knowledge-base-restructuring",
+        title: "Centralized Documentation System for Operational Clarity",
+        summary:
+          "Перестроил документацию в единую систему, поддерживающую масштабирование.",
+        role: "Ops / Knowledge Management",
+        stack: "Confluence, Jira, internal documentation processes",
+        timeline: "2023 — 2024",
+        tags: ["Knowledge management", "Process design"],
+        body: [
+          {
+            title: "Контекст",
+            paragraphs: [
+              "Документация была фрагментирована и плохо поддерживалась.",
+              "Сотрудники не знали, где искать информацию.",
+            ],
+          },
+          {
+            title: "Что сделал",
+            paragraphs: ["Инициировал переход к централизованной документации."],
+            bullets: [
+              "Выстроил структуру и навигацию",
+              "Сократил фрагментацию и задал стандарты",
+              "Сделал примеры и референсы проще для поиска",
+            ],
+          },
+          {
+            title: "Результат",
+            paragraphs: ["Создал базу, которая затем позволила внедрить AI‑поиск."],
+          },
+        ],
+      },
+      {
+        slug: "jira-process-simplification",
+        title: "Workflow Simplification Across Jira Operations",
+        summary:
+          "Сократил спrawl Jira‑бордов и улучшил взаимодействие команд.",
+        impact: "28 boards → 15 boards",
+        role: "Ops / Process Improvement",
+        stack: "Jira, Confluence, workflow design",
+        timeline: "2023",
+        tags: ["Process simplification", "Jira"],
+        body: [
+          {
+            title: "Контекст",
+            paragraphs: [
+              "Процессы были разбросаны по множеству Jira‑бордов.",
+            ],
+          },
+          {
+            title: "Что сделал",
+            paragraphs: ["Поддержал упрощение структуры и консолидацию."],
+            bullets: [
+              "Сократил количество бордов",
+              "Повысил согласованность процессов",
+            ],
+          },
+          {
+            title: "Результат",
+            paragraphs: ["Упростил систему и повысил прозрачность работы."],
+          },
+        ],
+      },
+      {
+        slug: "ai-enabled-recruiting-ops",
+        title: "AI‑Enabled Recruiting Operations",
+        summary:
+          "Улучшил рекрутинговые workflow через оптимизацию ATS и AI‑поддержку.",
+        role: "Ops / Recruiting Systems",
+        stack: "ATS tools, internal systems, AI support workflows",
+        timeline: "2022 — 2023",
+        tags: ["Recruiting ops", "Automation"],
+        body: [
+          {
+            title: "Контекст",
+            paragraphs: [
+              "Рекрутинг зависел от ручных шагов и разрозненных инструментов.",
+            ],
+          },
+          {
+            title: "Что сделал",
+            paragraphs: ["Переосмыслил workflow и улучшил системы."],
+            bullets: [
+              "Оптимизировал ATS‑процессы",
+              "Поддержал AI‑скрининг",
+              "Улучшил onboarding/offboarding",
+            ],
+          },
+          {
+            title: "Результат",
+            paragraphs: ["Более структурированная операционная база для найма."],
           },
         ],
       },
@@ -107,7 +287,7 @@ export const ru: Content = {
   },
   contact: {
     title: "Контакты",
-    subtitle: "",
+    subtitle: "Интересны operations, AI‑автоматизация, внутренние системы или процессный дизайн?",
     items: [
       { label: "Email", value: "dudnyk.maksym@gmail.com", href: "mailto:dudnyk.maksym@gmail.com" },
       { label: "Telegram", value: "@maxximilyan", href: "https://t.me/maxximilyan" },
@@ -120,7 +300,7 @@ export const ru: Content = {
     cta: "На главную",
   },
   footer: {
-    note: "© Maxim Dudnik",
+    note: "© Maksym Dudnyk",
     built: "Next.js + Tailwind",
   },
 };

@@ -54,6 +54,14 @@ export default async function LocaleHomePage({
                 {content.hero.secondaryCta.label}
               </a>
             )}
+            {content.hero.tertiaryCta && (
+              <a
+                className="rounded-full border border-border px-5 py-2 text-sm font-semibold text-text hover:bg-accentSoft"
+                href={content.hero.tertiaryCta.href}
+              >
+                {content.hero.tertiaryCta.label}
+              </a>
+            )}
           </div>
         </div>
 
@@ -69,6 +77,20 @@ export default async function LocaleHomePage({
           </div>
         </div>
       </section>
+
+      <Section id="impact" title={content.impact.title}>
+        <div className="grid gap-4 md:grid-cols-3">
+          {content.impact.items.map((item) => (
+            <div
+              key={item.label}
+              className="rounded-2xl border border-border bg-card p-6 text-center shadow-sm"
+            >
+              <p className="text-2xl font-semibold text-accent">{item.value}</p>
+              <p className="mt-2 text-sm text-muted">{item.label}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
 
       <Section id="about" title={content.about.title} subtitle={content.about.subtitle}>
         <div className="grid gap-6 md:grid-cols-2">
@@ -91,6 +113,29 @@ export default async function LocaleHomePage({
                 <Pill key={s}>{s}</Pill>
               ))}
             </div>
+          </div>
+        </div>
+      </Section>
+
+      <Section id="working-style" title={content.workingStyle.title} subtitle={content.workingStyle.subtitle}>
+        <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+          <ul className="space-y-2 text-sm text-muted">
+            {content.workingStyle.bullets.map((b) => (
+              <li key={b} className="flex gap-3">
+                <span className="mt-1 inline-block h-1.5 w-1.5 flex-none rounded-full bg-accent" />
+                <span>{b}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </Section>
+
+      <Section id="tools" title={content.tools.title}>
+        <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+          <div className="flex flex-wrap gap-2">
+            {content.tools.items.map((tool) => (
+              <Pill key={tool}>{tool}</Pill>
+            ))}
           </div>
         </div>
       </Section>
