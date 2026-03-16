@@ -2,13 +2,13 @@ import type { Content } from "@/content/types";
 
 export const en: Content = {
   meta: {
-    title: "Maksym Dudnyk — Business Operations & AI Automation",
+    title: "Maxim Dudnik — Business Operations & AI Automation",
     description:
       "Business Operations & AI Automation Specialist focused on scalable systems, AI implementation, and execution.",
     siteUrl: ""
   },
   header: {
-    brand: "Maksym Dudnyk",
+    brand: "Maxim Dudnik",
   },
   nav: {
     about: "About",
@@ -18,7 +18,7 @@ export const en: Content = {
   },
   hero: {
     kicker: "Business Operations & AI Automation Specialist",
-    title: "Maksym Dudnyk",
+    title: "Maxim Dudnik",
     subtitle:
       "Turning operational chaos into scalable systems, process clarity, and AI-enabled execution. I help startups build operational foundations by improving processes, implementing AI, and automating internal workflows across teams.",
     highlights: [
@@ -313,7 +313,7 @@ export const en: Content = {
     cta: "Go to home",
   },
   footer: {
-    note: "© Maksym Dudnyk",
+    note: "© Maxim Dudnik",
     built: "Built with Next.js + Tailwind",
   },
 };

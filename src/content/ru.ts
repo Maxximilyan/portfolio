@@ -2,13 +2,13 @@ import type { Content } from "@/content/types";
 
 export const ru: Content = {
   meta: {
-    title: "Maksym Dudnyk — Business Operations & AI Automation",
+    title: "Maxim Dudnik — Business Operations & AI Automation",
     description:
       "Business Operations & AI Automation Specialist: системы, процессы и внедрение AI.",
     siteUrl: ""
   },
   header: {
-    brand: "Maksym Dudnyk",
+    brand: "Maxim Dudnik",
   },
   nav: {
     about: "Обо мне",
@@ -18,7 +18,7 @@ export const ru: Content = {
   },
   hero: {
     kicker: "Business Operations & AI Automation Specialist",
-    title: "Maksym Dudnyk",
+    title: "Maxim Dudnik",
     subtitle:
       "Превращаю операционный хаос в масштабируемые системы, ясные процессы и AI‑поддержанное исполнение. Помогаю стартапам строить операционную основу через улучшение процессов, внедрение AI и автоматизацию внутренних workflow.",
     highlights: [
@@ -300,7 +300,7 @@ export const ru: Content = {
     cta: "На главную",
   },
   footer: {
-    note: "© Maksym Dudnyk",
+    note: "© Maxim Dudnik",
     built: "Next.js + Tailwind",
   },
 };
