@@ -171,6 +171,27 @@ export default function HomePage() {
         </div>
       </Section>
 
+      <Section
+        id="experience-timeline"
+        title={content.experienceTimeline.title}
+        subtitle={content.experienceTimeline.subtitle}
+      >
+        <div className="space-y-3">
+          {content.experienceTimeline.items.map((item) => (
+            <div
+              key={`${item.company}-${item.role}`}
+              className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-border bg-card px-5 py-4 shadow-sm"
+            >
+              <div>
+                <p className="text-sm font-semibold">{item.company}</p>
+                <p className="text-sm text-muted">{item.role}</p>
+              </div>
+              <p className="text-xs text-muted">{item.period}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
       <Section id="contact" title={content.contact.title} subtitle={content.contact.subtitle}>
         <div className="grid gap-4 md:grid-cols-2">
           {content.contact.items.map((c) => (

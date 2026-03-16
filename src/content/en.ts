@@ -286,6 +286,15 @@ export const en: Content = {
     subtitle: "In progress — I’ll fill this section with achievements next.",
     items: [],
   },
+  experienceTimeline: {
+    title: "Experience Timeline",
+    subtitle: "Company + role overview (more detail available on request).",
+    items: [
+      { company: "Startup", role: "Business Operations & AI Automation", period: "2023 — Present" },
+      { company: "Startup / Agency", role: "Project Coordinator / PM support", period: "2022 — 2023" },
+      { company: "IT Recruiting", role: "Recruiter / Ops support", period: "2021 — 2022" },
+    ],
+  },
   contact: {
     title: "Contact",
     subtitle: "Interested in operations, AI automation, internal systems, or startup process design?",

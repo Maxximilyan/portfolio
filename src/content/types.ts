@@ -21,6 +21,12 @@ export type ExperienceItem = {
   bullets: string[];
 };
 
+export type ExperienceTimelineItem = {
+  company: string;
+  role: string;
+  period: string;
+};
+
 export type Content = {
   meta: {
     title: string;
@@ -83,6 +89,11 @@ export type Content = {
     title: string;
     subtitle?: string;
     items: ExperienceItem[];
+  };
+  experienceTimeline: {
+    title: string;
+    subtitle?: string;
+    items: ExperienceTimelineItem[];
   };
   contact: {
     title: string;
