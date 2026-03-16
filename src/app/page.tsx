@@ -105,69 +105,6 @@ export default function HomePage() {
         ) : null}
       </Section>
 
-      <Section
-        id="experience"
-        title={content.experience.title}
-        subtitle={content.experience.subtitle}
-      >
-        <div className="space-y-4">
-          {content.experience.items.map((e) => (
-            <div key={e.company + e.role} className="rounded-2xl border border-border bg-card p-6 shadow-sm">
-              <div className="flex flex-wrap items-baseline justify-between gap-3">
-                <div>
-                  <p className="text-sm font-semibold">{e.role}</p>
-                  <p className="text-sm text-muted">{e.company}</p>
-                </div>
-                <p className="text-xs text-muted">{e.period}</p>
-              </div>
-              <ul className="mt-4 space-y-2 text-sm text-muted">
-                {e.bullets.map((b) => (
-                  <li key={b} className="flex gap-3">
-                    <span className="mt-1 inline-block h-1.5 w-1.5 flex-none rounded-full bg-accent" />
-                    <span>{b}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </Section>
-
-      <Section
-        id="experience-timeline"
-        title={content.experienceTimeline.title}
-        subtitle={content.experienceTimeline.subtitle}
-      >
-        <div className="space-y-4">
-          {content.experienceTimeline.items.map((item) => (
-            <div
-              key={`${item.company}-${item.periodSummary}`}
-              className="rounded-2xl border border-border bg-card px-6 py-5 shadow-sm"
-            >
-              <div className="flex flex-wrap items-baseline justify-between gap-3">
-                <div>
-                  <p className="text-sm font-semibold">{item.company}</p>
-                  {item.location ? (
-                    <p className="text-sm text-muted">{item.location}</p>
-                  ) : null}
-                </div>
-                <p className="text-xs text-muted">{item.periodSummary}</p>
-              </div>
-
-              <div className="mt-4 space-y-3 border-l border-border pl-4">
-                {item.roles.map((role) => (
-                  <div key={`${role.title}-${role.period}`} className="relative">
-                    <span className="absolute -left-[9px] top-1.5 h-2 w-2 rounded-full bg-accent" />
-                    <p className="text-sm font-semibold">{role.title}</p>
-                    <p className="text-xs text-muted">{role.period}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </Section>
-
       <Section id="contact" title={content.contact.title} subtitle={content.contact.subtitle}>
         <div className="grid gap-4 md:grid-cols-2">
           {content.contact.items.map((c) => (

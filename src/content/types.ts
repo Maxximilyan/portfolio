@@ -14,25 +14,6 @@ export type CaseItem = {
   body: CaseBodyBlock[];
 };
 
-export type ExperienceItem = {
-  company: string;
-  role: string;
-  period: string;
-  bullets: string[];
-};
-
-export type ExperienceTimelineRole = {
-  title: string;
-  period: string;
-};
-
-export type ExperienceTimelineItem = {
-  company: string;
-  periodSummary: string;
-  location?: string;
-  roles: ExperienceTimelineRole[];
-};
-
 export type Content = {
   meta: {
     title: string;
@@ -77,16 +58,6 @@ export type Content = {
     back: string;
     impact: string;
     role: string;
-  };
-  experience: {
-    title: string;
-    subtitle?: string;
-    items: ExperienceItem[];
-  };
-  experienceTimeline: {
-    title: string;
-    subtitle?: string;
-    items: ExperienceTimelineItem[];
   };
   contact: {
     title: string;

@@ -234,43 +234,6 @@ export const en: Content = {
     impact: "Impact",
     role: "Role",
   },
-  experience: {
-    title: "Experience",
-    subtitle: "In progress — I’ll fill this section with achievements next.",
-    items: [],
-  },
-  experienceTimeline: {
-    title: "Experience Timeline",
-    subtitle: "Company, role growth, and tenure.",
-    items: [
-      {
-        company: "Aloware",
-        periodSummary: "3 yrs 8 mos",
-        location: "Los Angeles, California, United States · Remote",
-        roles: [
-          { title: "Project Coordinator", period: "Aug 2023 — Present" },
-          { title: "Technical Recruiter", period: "Aug 2022 — Aug 2023" },
-        ],
-      },
-      {
-        company: "Growmore Marketing",
-        periodSummary: "8 mos",
-        location: "Tbilisi, Georgia",
-        roles: [
-          { title: "Project Manager", period: "May 2022 — Aug 2022" },
-          { title: "Recruitment Lead", period: "Jan 2022 — May 2022" },
-        ],
-      },
-      {
-        company: "Skyeng",
-        periodSummary: "1 yr 5 mos",
-        roles: [
-          { title: "Recruiter / Digital Transformation Manager", period: "Jul 2021 — Jan 2022" },
-          { title: "Recruiter", period: "Sep 2020 — Jul 2021" },
-        ],
-      },
-    ],
-  },
   contact: {
     title: "Contact",
     subtitle: "Interested in operations, AI automation, internal systems, or startup process design?",
