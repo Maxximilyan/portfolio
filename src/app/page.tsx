@@ -121,16 +121,6 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section id="tools" title={content.tools.title}>
-        <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
-          <div className="flex flex-wrap gap-2">
-            {content.tools.items.map((tool) => (
-              <Pill key={tool}>{tool}</Pill>
-            ))}
-          </div>
-        </div>
-      </Section>
-
       <Section id="cases" title={content.cases.title} subtitle={content.cases.subtitle}>
         <div className="grid gap-4 md:grid-cols-2">
           {content.cases.items.map((c) => (
