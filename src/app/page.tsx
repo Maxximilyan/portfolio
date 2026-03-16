@@ -69,20 +69,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <Section id="impact" title={content.impact.title}>
-        <div className="grid gap-4 md:grid-cols-3">
-          {content.impact.items.map((item) => (
-            <div
-              key={item.label}
-              className="rounded-2xl border border-border bg-card p-6 text-center shadow-sm"
-            >
-              <p className="text-2xl font-semibold text-accent">{item.value}</p>
-              <p className="mt-2 text-sm text-muted">{item.label}</p>
-            </div>
-          ))}
-        </div>
-      </Section>
-
       <Section id="about" title={content.about.title} subtitle={content.about.subtitle}>
         <div className="grid gap-6 md:grid-cols-2">
           <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
