@@ -238,9 +238,24 @@ export const en: Content = {
     title: "Contact",
     subtitle: "Interested in operations, AI automation, internal systems, or startup process design?",
     items: [
-      { label: "Email", value: "dudnyk.maksym@gmail.com", href: "mailto:dudnyk.maksym@gmail.com" },
-      { label: "Telegram", value: "@maxximilyan", href: "https://t.me/maxximilyan" },
-      { label: "LinkedIn", value: "linkedin.com/in/maxim-dudnik", href: "https://www.linkedin.com/in/maxim-dudnik/" }
+      {
+        label: "Email",
+        value: "dudnyk.maksym@gmail.com",
+        href: "mailto:dudnyk.maksym@gmail.com",
+        icon: "gmail",
+      },
+      {
+        label: "Telegram",
+        value: "@maxximilyan",
+        href: "https://t.me/maxximilyan",
+        icon: "telegram",
+      },
+      {
+        label: "LinkedIn",
+        value: "linkedin.com/in/maxim-dudnik",
+        href: "https://www.linkedin.com/in/maxim-dudnik/",
+        icon: "linkedin",
+      },
     ],
   },
   notFound: {

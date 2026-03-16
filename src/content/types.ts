@@ -62,7 +62,7 @@ export type Content = {
   contact: {
     title: string;
     subtitle?: string;
-    items: { label: string; value: string; href: string }[];
+    items: { label: string; value: string; href: string; icon: "gmail" | "telegram" | "linkedin" }[];
   };
   notFound: {
     title: string;
