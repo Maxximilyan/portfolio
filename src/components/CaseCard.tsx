@@ -20,15 +20,15 @@ export function CaseCard({
   return (
     <Link
       href={`/${locale}/cases/${slug}`}
-      className="group rounded-2xl border border-border bg-card/40 p-6 transition hover:bg-white/5"
+      className="group rounded-2xl border border-border bg-card p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
     >
       <div className="flex items-start justify-between gap-4">
         <h3 className="text-base font-semibold leading-snug">{title}</h3>
-        <span className="text-sm text-muted transition group-hover:text-text">→</span>
+        <span className="text-sm text-muted transition group-hover:text-accent">→</span>
       </div>
       <p className="mt-3 text-sm leading-relaxed text-muted">{summary}</p>
       {impact ? (
-        <p className="mt-4 text-sm font-semibold">{impact}</p>
+        <p className="mt-4 text-sm font-semibold text-accent">{impact}</p>
       ) : (
         <div className="mt-4 h-5" />
       )}
@@ -40,4 +40,3 @@ export function CaseCard({
     </Link>
   );
 }
-

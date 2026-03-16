@@ -41,9 +41,16 @@ export default async function LocaleLayout({
   const content = getContent(locale);
 
   return (
-    <div className="mx-auto max-w-5xl px-5 py-10">
-      <header className="mb-10 flex items-center justify-between gap-4">
-        <a href={`/${locale}`} className="text-sm font-semibold tracking-wide">
+    <div className="relative mx-auto max-w-6xl px-5 py-10">
+      <div className="pointer-events-none absolute -left-10 top-16 hidden h-40 w-40 rounded-full border border-border md:block" />
+      <div className="pointer-events-none absolute -right-6 top-24 hidden h-20 w-20 rounded-full border border-border md:block" />
+      <div className="pointer-events-none absolute -right-12 bottom-24 hidden h-28 w-28 rounded-lg border border-border md:block" />
+
+      <div className="pointer-events-none absolute left-6 top-24 hidden h-24 w-24 rounded-md opacity-60 md:block dot-grid" />
+      <div className="pointer-events-none absolute right-8 bottom-28 hidden h-20 w-20 rounded-md opacity-60 md:block dot-grid" />
+
+      <header className="mb-10 flex items-center justify-between gap-4 rounded-2xl border border-border bg-card/80 px-6 py-4 shadow-sm">
+        <a href={`/${locale}`} className="text-sm font-semibold tracking-wide text-accent">
           {content.header.brand}
         </a>
         <nav className="flex items-center gap-4 text-sm text-muted">
@@ -61,10 +68,16 @@ export default async function LocaleLayout({
           </a>
           <div className="ml-2 h-4 w-px bg-border" />
           <a
-            className="rounded-md border border-border px-2 py-1 text-xs text-text hover:bg-white/5"
+            className="rounded-md border border-border px-2 py-1 text-xs text-text hover:bg-accentSoft"
             href={`/${locale === "en" ? "ru" : "en"}`}
           >
             {locale === "en" ? "RU" : "EN"}
+          </a>
+          <a
+            className="ml-2 hidden rounded-full border border-accent px-3 py-1 text-xs font-semibold text-accent hover:bg-accent hover:text-white md:inline-flex"
+            href={`/${locale}#contact`}
+          >
+            Download CV
           </a>
         </nav>
       </header>

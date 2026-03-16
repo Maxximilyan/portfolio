@@ -34,7 +34,7 @@ export default async function CasePage({
         </Link>
       </div>
 
-      <header className="rounded-2xl border border-border bg-card/40 p-8">
+      <header className="rounded-3xl border border-border bg-card p-8 shadow-sm">
         <h1 className="text-3xl font-semibold leading-tight">{item.title}</h1>
         <p className="mt-3 max-w-3xl text-base leading-relaxed text-muted">{item.summary}</p>
 
@@ -45,7 +45,7 @@ export default async function CasePage({
         </div>
 
         {item.impact && (
-          <div className="mt-6 rounded-xl border border-border bg-white/5 p-4">
+          <div className="mt-6 rounded-xl border border-border bg-accentSoft p-4">
             <p className="text-xs font-semibold uppercase tracking-wide text-muted">
               {content.case.impact}
             </p>
@@ -55,19 +55,19 @@ export default async function CasePage({
       </header>
 
       <section className="grid gap-4 md:grid-cols-3">
-        <div className="rounded-2xl border border-border bg-card/40 p-6">
+        <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
           <p className="text-xs font-semibold uppercase tracking-wide text-muted">
             {content.case.role}
           </p>
           <p className="mt-2 text-sm">{item.role}</p>
         </div>
-        <div className="rounded-2xl border border-border bg-card/40 p-6">
+        <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
           <p className="text-xs font-semibold uppercase tracking-wide text-muted">
             {content.case.stack}
           </p>
           <p className="mt-2 text-sm">{item.stack}</p>
         </div>
-        <div className="rounded-2xl border border-border bg-card/40 p-6">
+        <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
           <p className="text-xs font-semibold uppercase tracking-wide text-muted">
             {content.case.timeline}
           </p>
@@ -75,7 +75,7 @@ export default async function CasePage({
         </div>
       </section>
 
-      <article className="space-y-6 rounded-2xl border border-border bg-card/40 p-8">
+      <article className="space-y-6 rounded-2xl border border-border bg-card p-8 shadow-sm">
         {item.body.map((b) => (
           <section key={b.title} className="space-y-3">
             <h2 className="text-lg font-semibold">{b.title}</h2>
