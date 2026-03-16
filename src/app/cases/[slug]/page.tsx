@@ -47,24 +47,12 @@ export default async function CasePage({
         )}
       </header>
 
-      <section className="grid gap-4 md:grid-cols-3">
+      <section className="grid gap-4 md:grid-cols-1">
         <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
           <p className="text-xs font-semibold uppercase tracking-wide text-muted">
             {content.case.role}
           </p>
           <p className="mt-2 text-sm">{item.role}</p>
-        </div>
-        <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
-          <p className="text-xs font-semibold uppercase tracking-wide text-muted">
-            {content.case.stack}
-          </p>
-          <p className="mt-2 text-sm">{item.stack}</p>
-        </div>
-        <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
-          <p className="text-xs font-semibold uppercase tracking-wide text-muted">
-            {content.case.timeline}
-          </p>
-          <p className="mt-2 text-sm">{item.timeline}</p>
         </div>
       </section>
 

@@ -10,8 +10,6 @@ export type CaseItem = {
   summary: string;
   impact?: string;
   role: string;
-  stack: string;
-  timeline: string;
   tags: string[];
   body: CaseBodyBlock[];
 };
@@ -80,8 +78,6 @@ export type Content = {
     back: string;
     impact: string;
     role: string;
-    stack: string;
-    timeline: string;
   };
   experience: {
     title: string;

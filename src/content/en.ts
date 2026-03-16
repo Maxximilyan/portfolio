@@ -114,8 +114,6 @@ export const en: Content = {
           "Created a structured knowledge base and launched an AI Slack bot connected to core systems to answer operational questions instantly.",
         impact: "51 users, 480 weekly messages, 6+ workdays saved per week",
         role: "AI Operations / Systems Builder",
-        stack: "RunBear, Slack, HubSpot, Jira, Confluence, Zoom, Google Calendar, Aloware MCP",
-        timeline: "2024 — 2025",
         tags: ["Knowledge infrastructure", "AI bot", "Operations"],
         body: [
           {
@@ -156,8 +154,6 @@ export const en: Content = {
           "Built an internal system that turns Reddit discussions into structured market and customer insights.",
         impact: "Opened a new strategic direction; dedicated hire created",
         role: "Ops / Automation Lead",
-        stack: "n8n, Supabase, Google Sheets, OpenAI, Reddit API, Slack",
-        timeline: "2024",
         tags: ["Market intelligence", "Automation", "AI search"],
         body: [
           {
@@ -190,8 +186,6 @@ export const en: Content = {
         summary:
           "Restructured fragmented documentation into a unified Confluence system that supports scale.",
         role: "Ops / Knowledge Management",
-        stack: "Confluence, Jira, internal documentation processes",
-        timeline: "2023 — 2024",
         tags: ["Knowledge management", "Process design"],
         body: [
           {
@@ -225,8 +219,6 @@ export const en: Content = {
           "Reduced Jira board sprawl and improved clarity across teams.",
         impact: "28 boards → 15 boards",
         role: "Ops / Process Improvement",
-        stack: "Jira, Confluence, workflow design",
-        timeline: "2023",
         tags: ["Process simplification", "Jira"],
         body: [
           {
@@ -257,8 +249,6 @@ export const en: Content = {
         summary:
           "Improved recruiting workflows by enhancing ATS processes and AI‑supported pre‑screening.",
         role: "Ops / Recruiting Systems",
-        stack: "ATS tools, internal systems, AI support workflows",
-        timeline: "2022 — 2023",
         tags: ["Recruiting ops", "Automation"],
         body: [
           {
@@ -290,8 +280,6 @@ export const en: Content = {
     back: "Back to cases",
     impact: "Impact",
     role: "Role",
-    stack: "Tools / stack",
-    timeline: "Timeline",
   },
   experience: {
     title: "Experience",
