@@ -7,9 +7,14 @@ import { CaseCard } from "@/components/CaseCard";
 import { Pill } from "@/components/Pill";
 import { Section } from "@/components/Section";
 
-export default function LocaleHomePage({ params }: { params: { locale: string } }) {
-  if (!isLocale(params.locale)) notFound();
-  const locale = params.locale as Locale;
+export default async function LocaleHomePage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale: rawLocale } = await params;
+  if (!isLocale(rawLocale)) notFound();
+  const locale = rawLocale as Locale;
   const content = getContent(locale);
 
   return (
