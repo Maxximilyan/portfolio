@@ -1,8 +1,6 @@
-# Portfolio resume (RU/EN)
+# Portfolio resume (EN)
 
 Одностраничное резюме‑лендинг + отдельные страницы кейсов. Готово для деплоя на Vercel и хранения в GitHub.
-
-Роль (в шапке): **AI Operations / Program Manager (AI initiatives)**.
 
 ## Стек
 
@@ -24,7 +22,6 @@ npm run dev
 ## Где править контент
 
 - `src/content/en.ts`
-- `src/content/ru.ts`
 
 ## Деплой на Vercel
 
@@ -34,5 +31,5 @@ npm run dev
 
 ## Роуты
 
-- `/en` и `/ru` — лендинг
-- `/en/cases/<slug>` и `/ru/cases/<slug>` — кейсы
+- `/` — лендинг
+- `/cases/<slug>` — кейсы

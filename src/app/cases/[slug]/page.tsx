@@ -2,34 +2,27 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { getCaseBySlug, getContent } from "@/content";
-import { isLocale, type Locale } from "@/i18n/locales";
 import { Pill } from "@/components/Pill";
 
 export function generateStaticParams() {
-  const enSlugs = getContent("en").cases.items.map((x) => x.slug);
-  const ruSlugs = getContent("ru").cases.items.map((x) => x.slug);
-  return [
-    ...enSlugs.map((slug) => ({ locale: "en", slug })),
-    ...ruSlugs.map((slug) => ({ locale: "ru", slug })),
-  ];
+  const slugs = getContent().cases.items.map((x) => x.slug);
+  return slugs.map((slug) => ({ slug }));
 }
 
 export default async function CasePage({
   params,
 }: {
-  params: Promise<{ locale: string; slug: string }>;
+  params: Promise<{ slug: string }>;
 }) {
-  const { locale: rawLocale, slug } = await params;
-  if (!isLocale(rawLocale)) notFound();
-  const locale = rawLocale as Locale;
-  const content = getContent(locale);
-  const item = getCaseBySlug(locale, slug);
+  const { slug } = await params;
+  const content = getContent();
+  const item = getCaseBySlug(slug);
   if (!item) notFound();
 
   return (
     <div className="space-y-8">
       <div className="text-sm text-muted">
-        <Link className="hover:text-text" href={`/${locale}#cases`}>
+        <Link className="hover:text-text" href="/#cases">
           ← {content.case.back}
         </Link>
       </div>
@@ -88,7 +81,7 @@ export default async function CasePage({
               <ul className="space-y-2 text-sm text-muted">
                 {b.bullets.map((x) => (
                   <li key={x} className="flex gap-3">
-                    <span className="mt-1 inline-block h-1.5 w-1.5 flex-none rounded-full bg-white/60" />
+                    <span className="mt-1 inline-block h-1.5 w-1.5 flex-none rounded-full bg-accent" />
                     <span>{x}</span>
                   </li>
                 ))}

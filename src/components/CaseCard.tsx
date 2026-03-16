@@ -1,16 +1,13 @@
 import Link from "next/link";
 import { Pill } from "@/components/Pill";
-import type { Locale } from "@/i18n/locales";
 
 export function CaseCard({
-  locale,
   slug,
   title,
   summary,
   impact,
   tags,
 }: {
-  locale: Locale;
   slug: string;
   title: string;
   summary: string;
@@ -19,7 +16,7 @@ export function CaseCard({
 }) {
   return (
     <Link
-      href={`/${locale}/cases/${slug}`}
+      href={`/cases/${slug}`}
       className="group rounded-2xl border border-border bg-card p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
     >
       <div className="flex items-start justify-between gap-4">
