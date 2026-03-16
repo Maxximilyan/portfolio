@@ -264,6 +264,6 @@ export const en: Content = {
   },
   footer: {
     note: "© Maxim Dudnik",
-    built: "Built with Next.js + Tailwind",
+    built: "Built with ❤️",
   },
 };
