@@ -136,7 +136,6 @@ export default function HomePage() {
           {content.cases.items.map((c) => (
             <CaseCard
               key={c.slug}
-              locale="en"
               slug={c.slug}
               title={c.title}
               summary={c.summary}
