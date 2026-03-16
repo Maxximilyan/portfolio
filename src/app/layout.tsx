@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import "@/styles/globals.css";
 import { getContent } from "@/content";
 
@@ -31,26 +30,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
             <div className="pointer-events-none absolute left-6 top-24 hidden h-24 w-24 rounded-md opacity-60 md:block dot-grid" />
             <div className="pointer-events-none absolute right-8 bottom-28 hidden h-20 w-20 rounded-md opacity-60 md:block dot-grid" />
-
-            <header className="mb-10 flex items-center justify-between gap-4 rounded-2xl border border-border bg-card/80 px-6 py-4 shadow-sm">
-              <Link href="/" className="text-sm font-semibold tracking-wide text-accent">
-                {content.header.brand}
-              </Link>
-              <nav className="flex items-center gap-4 text-sm text-muted">
-                <a className="hover:text-text" href="#cases">
-                  {content.nav.cases}
-                </a>
-                <a className="hover:text-text" href="#contact">
-                  {content.nav.contact}
-                </a>
-                <a
-                  className="ml-2 hidden rounded-full border border-accent px-3 py-1 text-xs font-semibold text-accent hover:bg-accent hover:text-white md:inline-flex"
-                  href="#contact"
-                >
-                  Download CV
-                </a>
-              </nav>
-            </header>
 
             <main>{children}</main>
 
