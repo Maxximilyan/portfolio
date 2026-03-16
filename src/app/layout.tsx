@@ -37,14 +37,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 {content.header.brand}
               </Link>
               <nav className="flex items-center gap-4 text-sm text-muted">
-                <a className="hover:text-text" href="#about">
-                  {content.nav.about}
-                </a>
                 <a className="hover:text-text" href="#cases">
                   {content.nav.cases}
-                </a>
-                <a className="hover:text-text" href="#experience">
-                  {content.nav.experience}
                 </a>
                 <a className="hover:text-text" href="#contact">
                   {content.nav.contact}
