@@ -2,13 +2,13 @@ import type { Content } from "@/content/types";
 
 export const ru: Content = {
   meta: {
-    title: "Ваше имя — AI Operations / Program Manager (AI initiatives)",
+    title: "Maxim Dudnik — AI Operations / Program Manager (AI initiatives)",
     description:
       "Резюме‑лендинг на RU/EN + кейсы: AI operations, delivery, координация и внедрения.",
     siteUrl: ""
   },
   header: {
-    brand: "Ваше имя",
+    brand: "Maxim Dudnik",
   },
   nav: {
     about: "Обо мне",
@@ -22,12 +22,13 @@ export const ru: Content = {
     subtitle:
       "Бэкграунд: IT‑рекрутинг и проектная координация. Сейчас в стартапе как AI Operations: превращаю хаос в план, синхронизирую CEO/COS, собираю автоматизации и довожу инициативы до результата.",
     highlights: ["Правая рука CEO/COS", "Внедрение ИИ", "Автоматизации", "Операционка", "Delivery"],
-    primaryCta: { label: "Написать на email", href: "mailto:you@example.com" },
-    secondaryCta: { label: "Telegram", href: "https://t.me/yourhandle" },
+    primaryCta: { label: "Написать на email", href: "mailto:dudnyk.maksym@gmail.com" },
+    secondaryCta: { label: "Telegram", href: "https://t.me/maxximilyan" },
   },
   about: {
     title: "Обо мне",
-    subtitle: "Коротко и по делу (правится в src/content/ru.ts).",
+    subtitle:
+      "AI Operations с фокусом на исполнение: перевожу цели в delivery, синхронизирую стейкхолдеров и довожу AI‑инициативы до результата.",
     blockTitle: "Что я делаю",
     bullets: [
       "Перевожу цели в план: сроки, ответственные, weekly‑прогресс и контроль исполнения.",
@@ -101,39 +102,16 @@ export const ru: Content = {
   },
   experience: {
     title: "Опыт",
-    subtitle: "Лучше достижения, а не обязанности.",
-    items: [
-      {
-        company: "Стартап (уточнить)",
-        role: "AI Operations / Правая рука CEO",
-        period: "2025 — н.в.",
-        bullets: [
-          "Веду внедрения ИИ и операционное исполнение инициатив.",
-          "Перевожу приоритеты CEO/COS в план и довожу до результата.",
-        ],
-      },
-      {
-        company: "Компания (уточнить)",
-        role: "Project Coordinator / опыт PM",
-        period: "2023 — 2025 (уточнить)",
-        bullets: ["Координация, трекинг, документация, поддержка delivery."],
-      },
-      {
-        company: "Компания (уточнить)",
-        role: "IT‑рекрутер",
-        period: "2021 — 2023 (уточнить)",
-        bullets: ["Подбор, коммуникация со стейкхолдерами, улучшение процесса найма."],
-      },
-    ],
+    subtitle: "Раздел в работе — добавлю после твоих правок.",
+    items: [],
   },
   contact: {
     title: "Контакты",
-    subtitle: "Замени плейсхолдеры на реальные ссылки.",
+    subtitle: "",
     items: [
-      { label: "Email", value: "you@example.com", href: "mailto:you@example.com" },
-      { label: "Telegram", value: "@yourhandle", href: "https://t.me/yourhandle" },
-      { label: "GitHub", value: "github.com/your", href: "https://github.com/your" },
-      { label: "LinkedIn", value: "linkedin.com/in/your", href: "https://linkedin.com/in/your" },
+      { label: "Email", value: "dudnyk.maksym@gmail.com", href: "mailto:dudnyk.maksym@gmail.com" },
+      { label: "Telegram", value: "@maxximilyan", href: "https://t.me/maxximilyan" },
+      { label: "LinkedIn", value: "linkedin.com/in/maxim-dudnik", href: "https://www.linkedin.com/in/maxim-dudnik/" }
     ],
   },
   notFound: {
@@ -142,7 +120,7 @@ export const ru: Content = {
     cta: "На главную",
   },
   footer: {
-    note: "© Ваше имя",
+    note: "© Maxim Dudnik",
     built: "Next.js + Tailwind",
   },
 };

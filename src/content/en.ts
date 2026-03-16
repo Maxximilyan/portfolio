@@ -2,13 +2,13 @@ import type { Content } from "@/content/types";
 
 export const en: Content = {
   meta: {
-    title: "Your Name — AI Operations / Program Manager (AI initiatives)",
+    title: "Maxim Dudnik — AI Operations / Program Manager (AI initiatives)",
     description:
       "Bilingual (EN/RU) resume landing page with selected cases: AI operations, delivery, and coordination.",
     siteUrl: ""
   },
   header: {
-    brand: "Your Name",
+    brand: "Maxim Dudnik",
   },
   nav: {
     about: "About",
@@ -22,12 +22,13 @@ export const en: Content = {
     subtitle:
       "Background in IT recruiting and project coordination; now working in a startup as AI Operations: turning chaos into execution, aligning CEO/COS, building automations, and pushing initiatives to production.",
     highlights: ["Right hand to CEO/COS", "AI adoption", "Automation", "Operations", "Delivery"],
-    primaryCta: { label: "Email me", href: "mailto:you@example.com" },
-    secondaryCta: { label: "Telegram", href: "https://t.me/yourhandle" },
+    primaryCta: { label: "Email me", href: "mailto:dudnyk.maksym@gmail.com" },
+    secondaryCta: { label: "Telegram", href: "https://t.me/maxximilyan" },
   },
   about: {
     title: "About",
-    subtitle: "A short, concrete summary (edit in src/content/en.ts).",
+    subtitle:
+      "AI Operations focused on execution: I translate goals into delivery, align stakeholders, and make AI initiatives work in real operations.",
     blockTitle: "What I do",
     bullets: [
       "Translate goals into clear plans, owners, timelines, and weekly progress.",
@@ -101,39 +102,16 @@ export const en: Content = {
   },
   experience: {
     title: "Experience",
-    subtitle: "Keep it achievement-focused (not responsibilities).",
-    items: [
-      {
-        company: "Startup (edit)",
-        role: "AI Operations / Right hand to CEO",
-        period: "2025 — present",
-        bullets: [
-          "Driving AI implementation and operational execution across initiatives.",
-          "Coordinating CEO/COS priorities into weekly plans and delivery.",
-        ],
-      },
-      {
-        company: "Company (edit)",
-        role: "Project Coordinator / Project Management (experience)",
-        period: "2023 — 2025 (edit)",
-        bullets: ["Cross-team coordination, tracking, documentation, delivery support."],
-      },
-      {
-        company: "Company (edit)",
-        role: "IT Recruiter",
-        period: "2021 — 2023 (edit)",
-        bullets: ["Hiring pipeline, stakeholder management, and process improvements."],
-      },
-    ],
+    subtitle: "In progress — I’ll fill this section with achievements next.",
+    items: [],
   },
   contact: {
     title: "Contact",
-    subtitle: "Replace placeholders with real links.",
+    subtitle: "",
     items: [
-      { label: "Email", value: "you@example.com", href: "mailto:you@example.com" },
-      { label: "Telegram", value: "@yourhandle", href: "https://t.me/yourhandle" },
-      { label: "GitHub", value: "github.com/your", href: "https://github.com/your" },
-      { label: "LinkedIn", value: "linkedin.com/in/your", href: "https://linkedin.com/in/your" },
+      { label: "Email", value: "dudnyk.maksym@gmail.com", href: "mailto:dudnyk.maksym@gmail.com" },
+      { label: "Telegram", value: "@maxximilyan", href: "https://t.me/maxximilyan" },
+      { label: "LinkedIn", value: "linkedin.com/in/maxim-dudnik", href: "https://www.linkedin.com/in/maxim-dudnik/" }
     ],
   },
   notFound: {
@@ -142,7 +120,7 @@ export const en: Content = {
     cta: "Go to home",
   },
   footer: {
-    note: "© Your Name",
+    note: "© Maxim Dudnik",
     built: "Built with Next.js + Tailwind",
   },
 };
