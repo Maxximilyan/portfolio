@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 
 import { getContent } from "@/content";
 import { isLocale, type Locale } from "@/i18n/locales";
-import "@/styles/globals.css";
 
 export function generateStaticParams() {
   return [{ locale: "en" }, { locale: "ru" }];
@@ -41,47 +40,42 @@ export default function LocaleLayout({
   const content = getContent(locale);
 
   return (
-    <html lang={locale} className="h-full scroll-smooth">
-      <body className="min-h-full bg-bg text-text antialiased">
-        <div className="mx-auto max-w-5xl px-5 py-10">
-          <header className="mb-10 flex items-center justify-between gap-4">
-            <a href={`/${locale}`} className="text-sm font-semibold tracking-wide">
-              {content.header.brand}
-            </a>
-            <nav className="flex items-center gap-4 text-sm text-muted">
-              <a className="hover:text-text" href={`/${locale}#about`}>
-                {content.nav.about}
-              </a>
-              <a className="hover:text-text" href={`/${locale}#cases`}>
-                {content.nav.cases}
-              </a>
-              <a className="hover:text-text" href={`/${locale}#experience`}>
-                {content.nav.experience}
-              </a>
-              <a className="hover:text-text" href={`/${locale}#contact`}>
-                {content.nav.contact}
-              </a>
-              <div className="ml-2 h-4 w-px bg-border" />
-              <a
-                className="rounded-md border border-border px-2 py-1 text-xs text-text hover:bg-white/5"
-                href={`/${locale === "en" ? "ru" : "en"}`}
-              >
-                {locale === "en" ? "RU" : "EN"}
-              </a>
-            </nav>
-          </header>
+    <div className="mx-auto max-w-5xl px-5 py-10">
+      <header className="mb-10 flex items-center justify-between gap-4">
+        <a href={`/${locale}`} className="text-sm font-semibold tracking-wide">
+          {content.header.brand}
+        </a>
+        <nav className="flex items-center gap-4 text-sm text-muted">
+          <a className="hover:text-text" href={`/${locale}#about`}>
+            {content.nav.about}
+          </a>
+          <a className="hover:text-text" href={`/${locale}#cases`}>
+            {content.nav.cases}
+          </a>
+          <a className="hover:text-text" href={`/${locale}#experience`}>
+            {content.nav.experience}
+          </a>
+          <a className="hover:text-text" href={`/${locale}#contact`}>
+            {content.nav.contact}
+          </a>
+          <div className="ml-2 h-4 w-px bg-border" />
+          <a
+            className="rounded-md border border-border px-2 py-1 text-xs text-text hover:bg-white/5"
+            href={`/${locale === "en" ? "ru" : "en"}`}
+          >
+            {locale === "en" ? "RU" : "EN"}
+          </a>
+        </nav>
+      </header>
 
-          <main>{children}</main>
+      <main>{children}</main>
 
-          <footer className="mt-16 border-t border-border pt-6 text-xs text-muted">
-            <div className="flex flex-wrap items-center justify-between gap-3">
-              <p>{content.footer.note}</p>
-              <p>{content.footer.built}</p>
-            </div>
-          </footer>
+      <footer className="mt-16 border-t border-border pt-6 text-xs text-muted">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <p>{content.footer.note}</p>
+          <p>{content.footer.built}</p>
         </div>
-      </body>
-    </html>
+      </footer>
+    </div>
   );
 }
-
