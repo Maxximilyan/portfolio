@@ -30,7 +30,6 @@ export const en: Content = {
     ],
     primaryCta: { label: "View Projects", href: "#cases" },
     secondaryCta: { label: "Contact Me", href: "#contact" },
-    tertiaryCta: { label: "Download Resume", href: "#" },
   },
   about: {
     title: "About",
