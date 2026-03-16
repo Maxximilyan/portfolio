@@ -63,19 +63,6 @@ export type Content = {
     blockTitle: string;
     bullets: string[];
   };
-  impact: {
-    title: string;
-    items: { value: string; label: string }[];
-  };
-  workingStyle: {
-    title: string;
-    subtitle?: string;
-    bullets: string[];
-  };
-  tools: {
-    title: string;
-    items: string[];
-  };
   skills: {
     title: string;
     items: string[];

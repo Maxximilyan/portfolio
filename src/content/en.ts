@@ -43,53 +43,6 @@ export const en: Content = {
       "Systems & Process Design — replace inefficient setups and build scalable operating foundations.",
     ],
   },
-  impact: {
-    title: "Impact Snapshot",
-    items: [
-      { value: "3.5+ years", label: "Startup operations experience" },
-      { value: "51 users", label: "Adopted internal AI knowledge bot" },
-      { value: "480 / week", label: "Messages processed by AI bot" },
-      { value: "22 hours", label: "Saved in first 3 days" },
-      { value: "6+ days", label: "Saved per week" },
-      { value: "28 → 15", label: "Jira boards simplified" },
-    ],
-  },
-  workingStyle: {
-    title: "Working Style",
-    subtitle:
-      "Most effective in fast-moving environments where systems are evolving and operations need to scale.",
-    bullets: [
-      "Teams move fast and iterate quickly",
-      "Documentation is messy or fragmented",
-      "Workflows depend too much on people",
-      "Operations need structure and scalability",
-      "Not just PM or coordinator — I build and implement systems",
-    ],
-  },
-  tools: {
-    title: "Tools",
-    items: [
-      "n8n",
-      "RunBear",
-      "OpenAI",
-      "Claude",
-      "Gemini",
-      "Rovo",
-      "Supabase",
-      "Firecrawl",
-      "Slack",
-      "HubSpot",
-      "Jira",
-      "Confluence",
-      "APIs",
-      "Webhooks",
-      "Google Sheets",
-      "ATS systems",
-      "HRIS systems",
-      "Dashboards",
-      "Reddit API",
-    ],
-  },
   skills: {
     title: "Skills / toolkit",
     items: [

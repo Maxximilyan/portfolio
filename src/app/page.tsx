@@ -70,34 +70,10 @@ export default function HomePage() {
       </section>
 
       <Section id="about" title={content.about.title} subtitle={content.about.subtitle}>
-        <div className="grid gap-6 md:grid-cols-2">
-          <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
-            <h3 className="text-sm font-semibold">{content.about.blockTitle}</h3>
-            <ul className="mt-4 space-y-2 text-sm text-muted">
-              {content.about.bullets.map((b) => (
-                <li key={b} className="flex gap-3">
-                  <span className="mt-1 inline-block h-1.5 w-1.5 flex-none rounded-full bg-accent" />
-                  <span>{b}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
-            <h3 className="text-sm font-semibold">{content.skills.title}</h3>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {content.skills.items.map((s) => (
-                <Pill key={s}>{s}</Pill>
-              ))}
-            </div>
-          </div>
-        </div>
-      </Section>
-
-      <Section id="working-style" title={content.workingStyle.title} subtitle={content.workingStyle.subtitle}>
         <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
-          <ul className="space-y-2 text-sm text-muted">
-            {content.workingStyle.bullets.map((b) => (
+          <h3 className="text-sm font-semibold">{content.about.blockTitle}</h3>
+          <ul className="mt-4 space-y-2 text-sm text-muted">
+            {content.about.bullets.map((b) => (
               <li key={b} className="flex gap-3">
                 <span className="mt-1 inline-block h-1.5 w-1.5 flex-none rounded-full bg-accent" />
                 <span>{b}</span>
