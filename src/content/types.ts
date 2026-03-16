@@ -21,10 +21,16 @@ export type ExperienceItem = {
   bullets: string[];
 };
 
+export type ExperienceTimelineRole = {
+  title: string;
+  period: string;
+};
+
 export type ExperienceTimelineItem = {
   company: string;
-  role: string;
-  period: string;
+  periodSummary: string;
+  location?: string;
+  roles: ExperienceTimelineRole[];
 };
 
 export type Content = {

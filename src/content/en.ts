@@ -288,11 +288,34 @@ export const en: Content = {
   },
   experienceTimeline: {
     title: "Experience Timeline",
-    subtitle: "Company + role overview (more detail available on request).",
+    subtitle: "Company, role growth, and tenure.",
     items: [
-      { company: "Startup", role: "Business Operations & AI Automation", period: "2023 — Present" },
-      { company: "Startup / Agency", role: "Project Coordinator / PM support", period: "2022 — 2023" },
-      { company: "IT Recruiting", role: "Recruiter / Ops support", period: "2021 — 2022" },
+      {
+        company: "Aloware",
+        periodSummary: "3 yrs 8 mos",
+        location: "Los Angeles, California, United States · Remote",
+        roles: [
+          { title: "Project Coordinator", period: "Aug 2023 — Present" },
+          { title: "Technical Recruiter", period: "Aug 2022 — Aug 2023" },
+        ],
+      },
+      {
+        company: "Growmore Marketing",
+        periodSummary: "8 mos",
+        location: "Tbilisi, Georgia",
+        roles: [
+          { title: "Project Manager", period: "May 2022 — Aug 2022" },
+          { title: "Recruitment Lead", period: "Jan 2022 — May 2022" },
+        ],
+      },
+      {
+        company: "Skyeng",
+        periodSummary: "1 yr 5 mos",
+        roles: [
+          { title: "Recruiter / Digital Transformation Manager", period: "Jul 2021 — Jan 2022" },
+          { title: "Recruiter", period: "Sep 2020 — Jul 2021" },
+        ],
+      },
     ],
   },
   contact: {

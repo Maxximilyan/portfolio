@@ -176,17 +176,31 @@ export default function HomePage() {
         title={content.experienceTimeline.title}
         subtitle={content.experienceTimeline.subtitle}
       >
-        <div className="space-y-3">
+        <div className="space-y-4">
           {content.experienceTimeline.items.map((item) => (
             <div
-              key={`${item.company}-${item.role}`}
-              className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-border bg-card px-5 py-4 shadow-sm"
+              key={`${item.company}-${item.periodSummary}`}
+              className="rounded-2xl border border-border bg-card px-6 py-5 shadow-sm"
             >
-              <div>
-                <p className="text-sm font-semibold">{item.company}</p>
-                <p className="text-sm text-muted">{item.role}</p>
+              <div className="flex flex-wrap items-baseline justify-between gap-3">
+                <div>
+                  <p className="text-sm font-semibold">{item.company}</p>
+                  {item.location ? (
+                    <p className="text-sm text-muted">{item.location}</p>
+                  ) : null}
+                </div>
+                <p className="text-xs text-muted">{item.periodSummary}</p>
               </div>
-              <p className="text-xs text-muted">{item.period}</p>
+
+              <div className="mt-4 space-y-3 border-l border-border pl-4">
+                {item.roles.map((role) => (
+                  <div key={`${role.title}-${role.period}`} className="relative">
+                    <span className="absolute -left-[9px] top-1.5 h-2 w-2 rounded-full bg-accent" />
+                    <p className="text-sm font-semibold">{role.title}</p>
+                    <p className="text-xs text-muted">{role.period}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           ))}
         </div>
