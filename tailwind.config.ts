@@ -5,13 +5,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        bg: "#F4F7FB",
-        card: "#FFFFFF",
-        text: "#0F172A",
-        muted: "#64748B",
-        border: "rgba(15, 23, 42, 0.12)",
-        accent: "#16A34A",
-        accentSoft: "#DCFCE7"
+        bg: "#0e0e0e",
+        card: "#161616",
+        text: "#f0ede8",
+        muted: "#888888",
+        border: "rgba(255, 255, 255, 0.08)",
+        accent: "#c8f064",
+        accentSoft: "rgba(200, 240, 100, 0.10)"
       }
     },
   },

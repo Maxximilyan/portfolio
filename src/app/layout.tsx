@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "@/styles/globals.css";
 import { getContent } from "@/content";
+import { FadeUpObserver } from "@/components/FadeUpObserver";
 
 export function generateMetadata(): Metadata {
   const content = getContent();
@@ -18,29 +19,34 @@ export function generateMetadata(): Metadata {
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const content = getContent();
   return (
     <html lang="en" className="h-full scroll-smooth">
-      <body className="min-h-full bg-bg text-text antialiased">
-        <div className="page-bg min-h-full">
-          <div className="relative mx-auto max-w-6xl px-5 py-10">
-            <div className="pointer-events-none absolute -left-10 top-16 hidden h-40 w-40 rounded-full border border-border md:block" />
-            <div className="pointer-events-none absolute -right-6 top-24 hidden h-20 w-20 rounded-full border border-border md:block" />
-            <div className="pointer-events-none absolute -right-12 bottom-24 hidden h-28 w-28 rounded-lg border border-border md:block" />
-
-            <div className="pointer-events-none absolute left-6 top-24 hidden h-24 w-24 rounded-md opacity-60 md:block dot-grid" />
-            <div className="pointer-events-none absolute right-8 bottom-28 hidden h-20 w-20 rounded-md opacity-60 md:block dot-grid" />
-
-            <main>{children}</main>
-
-            <footer className="mt-16 border-t border-border pt-6 text-xs text-muted">
-              <div className="flex flex-wrap items-center justify-between gap-3">
-                <p>{content.footer.note}</p>
-                <p>{content.footer.built}</p>
-              </div>
-            </footer>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className="min-h-full antialiased">
+        <nav>
+          <div className="nav-logo">Maxim Dudnik</div>
+          <div className="nav-links">
+            <a href="#about">About</a>
+            <a href="#cases">Cases</a>
+            <a href="#contact">Contact</a>
           </div>
-        </div>
+        </nav>
+
+        <main>{children}</main>
+
+        <footer>
+          <p>© 2026 Maxim Dudnik</p>
+          <p>Operations &amp; AI Implementation</p>
+        </footer>
+
+        <FadeUpObserver />
       </body>
     </html>
   );

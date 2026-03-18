@@ -2,10 +2,10 @@ import type { Content } from "@/content/types";
 
 export const en: Content = {
   meta: {
-    title: "Maxim Dudnik — Business Operations & AI Automation",
+    title: "Maxim Dudnik — Operations & AI Implementation",
     description:
-      "Business Operations & AI Automation Specialist focused on scalable systems, AI implementation, and execution.",
-    siteUrl: ""
+      "I build AI systems that teams actually use — from knowledge access to cross-system automations.",
+    siteUrl: "",
   },
   header: {
     brand: "Maxim Dudnik",
@@ -263,7 +263,7 @@ export const en: Content = {
     cta: "Go to home",
   },
   footer: {
-    note: "© Maxim Dudnik",
-    built: "Built with ❤️",
+    note: "© 2026 Maxim Dudnik",
+    built: "Operations & AI Implementation",
   },
 };

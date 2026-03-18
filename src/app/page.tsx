@@ -1,138 +1,536 @@
-import Link from "next/link";
-
-import { getContent } from "@/content";
-import { CaseCard } from "@/components/CaseCard";
-import { Pill } from "@/components/Pill";
-import { Section } from "@/components/Section";
-
 export default function HomePage() {
-  const content = getContent();
-
   return (
-    <div className="space-y-16">
-      <section className="grid gap-8 rounded-3xl border border-border bg-card p-8 shadow-sm md:grid-cols-[1.1fr_0.9fr]">
-        <div>
-          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-accentSoft px-3 py-1 text-xs font-semibold text-accent">
-            {content.hero.kicker}
-          </span>
-          <h1 className="mt-4 text-3xl font-semibold leading-tight md:text-4xl">
-            {content.hero.title}
+    <>
+      <section className="hero">
+        <div className="hero-inner">
+          <div className="hero-label">Available for consulting</div>
+          <h1>
+            I build <em>AI systems</em>
+            <br />
+            that teams actually use
           </h1>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted">
-            {content.hero.subtitle}
+          <p className="hero-sub">
+            Operations specialist who implemented AI inside a real company — 50 out of 60 people
+            use it daily. I help businesses go from &quot;we want to try AI&quot; to systems that
+            save measurable time, starting week one.
           </p>
-
-          <div className="mt-6 flex flex-wrap gap-2">
-            {content.hero.highlights.map((h) => (
-              <Pill key={h}>{h}</Pill>
-            ))}
+          <div className="hero-stats">
+            <div className="stat-item">
+              <span className="stat-num">83%</span>
+              <span className="stat-label">Team adoption rate</span>
+            </div>
+            <div className="stat-item">
+              <span className="stat-num">6+</span>
+              <span className="stat-label">Workdays saved / week</span>
+            </div>
+            <div className="stat-item">
+              <span className="stat-num">1,193</span>
+              <span className="stat-label">Posts auto-analysed</span>
+            </div>
+            <div className="stat-item">
+              <span className="stat-num">4 yrs</span>
+              <span className="stat-label">In operations &amp; automation</span>
+            </div>
           </div>
-
-          <div className="mt-7 flex flex-wrap gap-3">
-            {content.hero.primaryCta && (
-              <a
-                className="rounded-full bg-accent px-5 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-700"
-                href={content.hero.primaryCta.href}
-              >
-                {content.hero.primaryCta.label}
-              </a>
-            )}
-            {content.hero.secondaryCta && (
-              <a
-                className="rounded-full border border-border px-5 py-2 text-sm font-semibold text-text hover:bg-accentSoft"
-                href={content.hero.secondaryCta.href}
-              >
-                {content.hero.secondaryCta.label}
-              </a>
-            )}
-            {content.hero.tertiaryCta && (
-              <a
-                className="rounded-full border border-border px-5 py-2 text-sm font-semibold text-text hover:bg-accentSoft"
-                href={content.hero.tertiaryCta.href}
-              >
-                {content.hero.tertiaryCta.label}
-              </a>
-            )}
+          <div className="hero-cta">
+            <a href="#cases" className="btn-primary">
+              View Cases →
+            </a>
+            <a href="#contact" className="btn-ghost">
+              Get in touch
+            </a>
           </div>
         </div>
+      </section>
 
-        <div className="relative flex items-center justify-center">
-          <div className="absolute -right-3 top-6 h-24 w-24 rounded-md border border-border" />
-          <div className="absolute -left-4 bottom-8 h-16 w-16 rounded-md border border-border" />
-          <div className="relative h-72 w-60 rounded-2xl border border-border bg-accentSoft shadow-md">
-            <div className="absolute -left-6 -top-6 h-24 w-24 rounded-xl border-2 border-text/20 bg-white" />
-            <div className="absolute -right-6 -bottom-6 h-28 w-28 rounded-xl bg-accent" />
-            <div className="absolute inset-0 flex items-center justify-center text-sm font-semibold text-accent">
-              Photo / Avatar
+      <section className="about" id="about">
+        <div className="about-left fade-up">
+          <div className="section-label">About me</div>
+          <h2>From recruiter to operations &amp; AI builder</h2>
+          <p>
+            I started in recruiting — which taught me how people actually work, what slows them
+            down, and where organisations lose time. That perspective became the foundation for
+            everything I do in operations.
+          </p>
+          <p>
+            Over 4+ years across enterprise, SaaS, and fintech, I moved from managing hiring to
+            redesigning the processes around it — documentation, tooling, cross-team workflows.
+            When AI became practical, I was already inside the machine.
+          </p>
+          <p>
+            Today, I build AI systems that solve operational problems people actually have: too many
+            interruptions, too much manual work, no single source of truth. I don&apos;t just set up
+            tools — I get them adopted.
+          </p>
+        </div>
+        <div className="about-right fade-up">
+          <div className="section-label">Experience</div>
+
+          <div className="exp-item">
+            <div className="exp-top">
+              <span className="exp-company">Aloware (CCaaS SaaS)</span>
+              <span className="exp-type tag-startup">Current</span>
+            </div>
+            <div className="exp-role">Project Coordinator → Operations &amp; AI Implementation</div>
+          </div>
+
+          <div className="exp-item">
+            <div className="exp-top">
+              <span className="exp-company">SkyEng</span>
+              <span className="exp-type tag-enterprise">Enterprise</span>
+            </div>
+            <div className="exp-role">Operations</div>
+          </div>
+
+          <div className="exp-item">
+            <div className="exp-top">
+              <span className="exp-company">Latoken</span>
+              <span className="exp-type tag-startup">Startup</span>
+            </div>
+            <div className="exp-role">Operations</div>
+          </div>
+
+          <div className="exp-item">
+            <div className="exp-top">
+              <span className="exp-company">GrowMore</span>
+              <span className="exp-type tag-startup">Startup</span>
+            </div>
+            <div className="exp-role">Operations</div>
+          </div>
+        </div>
+      </section>
+
+      <section className="cases-section" id="cases">
+        <div className="cases-header fade-up">
+          <div className="section-label">Selected Cases</div>
+          <h2>
+            Real problems. Real results.
+            <br />
+            All inside one 60-person company.
+          </h2>
+        </div>
+
+        <div className="cases-grid">
+          <div className="case-card featured fade-up">
+            <div className="case-left">
+              <div className="case-num">01</div>
+              <div className="case-tags">
+                <span className="tag">AI Agent</span>
+                <span className="tag">Slack</span>
+                <span className="tag">Operations</span>
+              </div>
+              <h3>AI Knowledge Bot That Replaced 50 People Tagging Each Other</h3>
+              <p>
+                Every day, employees across Support, Sales, and Engineering spent time tagging
+                colleagues to find answers: &quot;Where is the refund policy?&quot;, &quot;What&apos;s
+                the status of client X in HubSpot?&quot;, &quot;Is there a Zoom recording for this
+                onboarding?&quot;.
+              </p>
+              <p>
+                I built an AI agent inside Slack that connects to every major system in the
+                company. Now employees ask the bot — and get an answer in seconds.
+              </p>
+              <div className="what-i-did">
+                <div className="what-i-did-label">What I did</div>
+                <ul>
+                  <li>
+                    Cleaned and restructured Confluence (4,000+ → 1,500 clean documents) to give AI
+                    high-quality data
+                  </li>
+                  <li>
+                    Built an AI Slack bot connected to HubSpot, Jira, Confluence, Zoom, Google
+                    Calendar, Aloware, and Intercom
+                  </li>
+                  <li>
+                    Added private DM mode so people could ask &quot;embarrassing&quot; questions
+                    without audience
+                  </li>
+                  <li>Ran 2 demo sessions + created docs and FAQ to drive adoption</li>
+                  <li>
+                    Designed the system to be MCP-extensible — any new tool can be connected without
+                    rebuilding
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="case-right">
+              <div className="problem-box">
+                <div className="problem-box-label">The problem before</div>
+                <p>
+                  People were constantly tagging colleagues in Slack to find information scattered
+                  across 6+ systems. Every interruption cost both people time — and the person
+                  tagged had to stop what they were doing.
+                </p>
+              </div>
+              <div className="impact-grid">
+                <div className="impact-item">
+                  <span className="impact-num">22h</span>
+                  <span className="impact-desc">Saved in the first 3 days with only 13 users</span>
+                </div>
+                <div className="impact-item">
+                  <span className="impact-num">51</span>
+                  <span className="impact-desc">Active users within one week of launch</span>
+                </div>
+                <div className="impact-item">
+                  <span className="impact-num">480</span>
+                  <span className="impact-desc">Messages per week at peak usage</span>
+                </div>
+                <div className="impact-item">
+                  <span className="impact-num">6+ days</span>
+                  <span className="impact-desc">Of human work saved every single week</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="case-card fade-up">
+            <div className="case-left">
+              <div className="case-num">02</div>
+              <div className="case-tags">
+                <span className="tag">8 AI Agents</span>
+                <span className="tag">Market Intelligence</span>
+                <span className="tag">Content</span>
+              </div>
+              <h3>Reddit Intelligence System That Replaced Manual Market Research</h3>
+              <p>
+                Understanding what potential customers actually struggle with — in their own words
+                — used to require expensive research firms or hours of manual browsing. I built a
+                system that does it automatically, at scale.
+              </p>
+              <p>
+                The system monitors targeted subreddits for conversations relevant to Aloware&apos;s
+                market. 8 specialised AI agents then turn raw Reddit posts into product insights,
+                marketing angles, sales opportunities, and ready-to-post content.
+              </p>
+              <div className="what-i-did">
+                <div className="what-i-did-label">What I did</div>
+                <ul>
+                  <li>Built automated monitoring across 17 subreddits with custom keyword filters</li>
+                  <li>Created a Product Analyst agent that maps complaints to roadmap priorities</li>
+                  <li>Created a Marketing Analyst agent that identifies messaging opportunities</li>
+                  <li>
+                    Built a Content agent that generates blog/social drafts from real customer
+                    language
+                  </li>
+                  <li>Built a Sales Opportunity agent that flags high-intent posts for the sales team</li>
+                  <li>The volume of output led to a dedicated social media hire to manage publishing</li>
+                </ul>
+              </div>
+            </div>
+            <div className="case-right">
+              <div className="problem-box">
+                <div className="problem-box-label">What the system found (example)</div>
+                <p>
+                  From 1,193 analysed posts: 65% of conversations are about VoIP/calling
+                  fundamentals, 48% about AI &amp; automation, 37% about CRM integrations. The #1
+                  competitor gap: HubSpot + GoHighLevel native integration depth. This data now
+                  drives product roadmap decisions.
+                </p>
+              </div>
+              <div className="impact-grid">
+                <div className="impact-item">
+                  <span className="impact-num">1,193</span>
+                  <span className="impact-desc">Posts analysed automatically to date</span>
+                </div>
+                <div className="impact-item">
+                  <span className="impact-num">8</span>
+                  <span className="impact-desc">Specialised AI agents working in parallel</span>
+                </div>
+                <div className="impact-item">
+                  <span className="impact-num">17</span>
+                  <span className="impact-desc">Subreddits monitored continuously</span>
+                </div>
+                <div className="impact-item">
+                  <span className="impact-num">1 hire</span>
+                  <span className="impact-desc">New role created to handle content output</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="case-card fade-up">
+            <div className="case-left">
+              <div className="case-num">03</div>
+              <div className="case-tags">
+                <span className="tag">Process Design</span>
+                <span className="tag">Jira</span>
+                <span className="tag">Cross-team</span>
+              </div>
+              <h3>PULPO: Turning 28 Jira Boards Into a System Engineers Could Trust</h3>
+              <p>
+                Multiple teams were adding half-filled bug reports directly to engineering boards.
+                Developers would receive tickets with missing context, pass them to product, who&apos;d
+                chase the original reporter — while the customer waited and CSAT scores dropped.
+              </p>
+              <p>
+                I designed and built PULPO (named after the Spanish word for octopus — it connects
+                everything). A structured intake system that created one clear path for any request
+                to reach engineering.
+              </p>
+              <div className="what-i-did">
+                <div className="what-i-did-label">What I did</div>
+                <ul>
+                  <li>
+                    Designed a 3-tier hierarchy: Product Matrix (roadmap) → PULPO (cross-team intake)
+                    → Engineering Pods
+                  </li>
+                  <li>
+                    Created mandatory fields on issue types — incomplete tickets simply cannot be
+                    submitted
+                  </li>
+                  <li>Built automations that route, categorise, and generate metrics on every incoming request</li>
+                  <li>Reduced 28 boards to 15 active ones with clear ownership and live dashboards</li>
+                  <li>Rolled out training from day one of onboarding so every new joiner learns the system</li>
+                </ul>
+              </div>
+            </div>
+            <div className="case-right">
+              <div className="problem-box">
+                <div className="problem-box-label">The problem before</div>
+                <p>
+                  Teams created boards for new projects, used them for 2 weeks, then abandoned them.
+                  Developers had no clear backlog. Product managers spent hours chasing context.
+                  Clients didn&apos;t get updates. CSAT declined.
+                </p>
+              </div>
+              <div className="impact-grid">
+                <div className="impact-item">
+                  <span className="impact-num">28→15</span>
+                  <span className="impact-desc">Boards consolidated with active owners</span>
+                </div>
+                <div className="impact-item">
+                  <span className="impact-num">0</span>
+                  <span className="impact-desc">Incomplete tickets — enforced by the system</span>
+                </div>
+                <div className="impact-item">
+                  <span className="impact-num">Full CFT</span>
+                  <span className="impact-desc">Every cross-functional team trained from day one</span>
+                </div>
+                <div className="impact-item">
+                  <span className="impact-num">Live</span>
+                  <span className="impact-desc">Metrics dashboards on bugs, features, and cycle time</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="case-card fade-up">
+            <div className="case-left">
+              <div className="case-num">04</div>
+              <div className="case-tags">
+                <span className="tag">Custom ATS</span>
+                <span className="tag">AI Screening</span>
+                <span className="tag">GDPR</span>
+              </div>
+              <h3>Custom ATS That Replaced $15K/Year Software</h3>
+              <p>
+                The company was paying for enterprise HR tools — JazzHR, BambooHR, Factorial — but
+                with one recruiter and limited needs, 80% of the features went unused. The cost
+                wasn&apos;t justified.
+              </p>
+              <p>
+                I built a custom Applicant Tracking System inside Google Sheets, with AI-powered
+                screening, automated emails, a careers page, and full GDPR compliance.
+              </p>
+              <div className="what-i-did">
+                <div className="what-i-did-label">What I did</div>
+                <ul>
+                  <li>Built a careers page with per-role descriptions and an application form</li>
+                  <li>
+                    Set up automated emails (sent from official domain) triggered by candidate status
+                    changes
+                  </li>
+                  <li>
+                    Added AI agents that analyse each CV against all open roles — so a &quot;no&quot;
+                    for one role might be a &quot;yes&quot; for another
+                  </li>
+                  <li>Built a secure resume storage system with GDPR deletion on request</li>
+                  <li>
+                    Candidates agree to privacy policy at the point of application — legally sound
+                    under US and EU law
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="case-right">
+              <div className="problem-box">
+                <div className="problem-box-label">The problem before</div>
+                <p>
+                  Paying for 3+ enterprise recruiting tools built for teams of 10+ recruiters. Most
+                  functionality unused. Spreadsheets still being used for quick tasks on top. No AI
+                  screening. No system for matching candidates across roles.
+                </p>
+              </div>
+              <div className="impact-grid">
+                <div className="impact-item">
+                  <span className="impact-num">$0</span>
+                  <span className="impact-desc">Replaced paid platforms with a custom-built solution</span>
+                </div>
+                <div className="impact-item">
+                  <span className="impact-num">Multi-role</span>
+                  <span className="impact-desc">AI screens each candidate across all open positions</span>
+                </div>
+                <div className="impact-item">
+                  <span className="impact-num">Auto</span>
+                  <span className="impact-desc">Email sequences triggered by hiring stage</span>
+                </div>
+                <div className="impact-item">
+                  <span className="impact-num">GDPR</span>
+                  <span className="impact-desc">Fully compliant — EU &amp; US privacy law</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="case-card fade-up">
+            <div className="case-left">
+              <div className="case-num">05</div>
+              <div className="case-tags">
+                <span className="tag">Knowledge Management</span>
+                <span className="tag">Confluence</span>
+                <span className="tag">AI Readiness</span>
+              </div>
+              <h3>4,000 Documents → 1,500: Making Knowledge AI-Ready</h3>
+              <p>
+                Confluence had grown organically over years. Each team had their own space. The
+                deeper you went, the older the data. New joiners spent days looking for documents —
+                and then needed a call to understand them.
+              </p>
+              <p>
+                I audited everything, removed what was outdated, rewrote what was unclear, and built
+                a unified index. The clean output then became the foundation for the AI knowledge
+                bot.
+              </p>
+              <div className="what-i-did">
+                <div className="what-i-did-label">What I did</div>
+                <ul>
+                  <li>Audited all Confluence spaces and mapped documentation to actual team needs</li>
+                  <li>
+                    Deleted or archived outdated pages — reducing total count from 4,000+ to ~1,500
+                  </li>
+                  <li>
+                    Created a single master index so any employee can find any document without
+                    knowing which space it lives in
+                  </li>
+                  <li>Standardised writing format so pages are actually readable, not just stored</li>
+                  <li>
+                    This clean data became the input for the AI bot — garbage in, garbage out was
+                    avoided
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="case-right">
+              <div className="problem-box">
+                <div className="problem-box-label">The problem before</div>
+                <p>
+                  4,000+ pages, many outdated or duplicate. No consistent structure across teams.
+                  New hires joined Zoom calls to find documents. Experienced employees wasted time
+                  explaining content that should have been self-explanatory. AI could not be added
+                  to messy data.
+                </p>
+              </div>
+              <div className="impact-grid">
+                <div className="impact-item">
+                  <span className="impact-num">4K→1.5K</span>
+                  <span className="impact-desc">Documents cleaned and restructured</span>
+                </div>
+                <div className="impact-item">
+                  <span className="impact-num">1 index</span>
+                  <span className="impact-desc">Single entry point to all company knowledge</span>
+                </div>
+                <div className="impact-item">
+                  <span className="impact-num">AI-ready</span>
+                  <span className="impact-desc">Clean data made AI bot possible and accurate</span>
+                </div>
+                <div className="impact-item">
+                  <span className="impact-num">Faster</span>
+                  <span className="impact-desc">Onboarding — new hires find answers independently</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <Section id="cases" title={content.cases.title} subtitle={content.cases.subtitle}>
-        <div className="grid gap-4 md:grid-cols-2">
-          {content.cases.items.map((c) => (
-            <CaseCard
-              key={c.slug}
-              slug={c.slug}
-              title={c.title}
-              summary={c.summary}
-              impact={c.impact}
-              tags={c.tags}
-            />
-          ))}
-        </div>
-        {content.cases.items[0] ? (
-          <div className="mt-4 text-sm text-muted">
-            <Link className="hover:text-text" href={`/cases/${content.cases.items[0].slug}`}>
-              {content.cases.hint}
-            </Link>
+      <section className="approach">
+        <div className="approach-inner">
+          <div className="section-label fade-up">How I work</div>
+          <h2 className="fade-up">
+            Why most AI implementations fail —
+            <br />
+            and what I do differently
+          </h2>
+          <div className="approach-grid">
+            <div className="approach-item fade-up">
+              <div className="approach-icon">🧹</div>
+              <h4>Clean data first</h4>
+              <p>
+                AI is only as good as what it&apos;s connected to. Before building anything, I fix
+                the underlying data and processes. Messy input = unreliable output = people stop
+                using it.
+              </p>
+            </div>
+            <div className="approach-item fade-up">
+              <div className="approach-icon">👥</div>
+              <h4>Adoption by design</h4>
+              <p>
+                Tools don&apos;t drive value — habits do. I build for adoption from day one: demos,
+                documentation, private modes, and onboarding flows so people actually use what was
+                built.
+              </p>
+            </div>
+            <div className="approach-item fade-up">
+              <div className="approach-icon">📐</div>
+              <h4>Measurable from week one</h4>
+              <p>
+                Every project gets success metrics defined upfront. I track hours saved, adoption
+                rate, and process improvements — not just &quot;it&apos;s live now&quot;.
+              </p>
+            </div>
           </div>
-        ) : null}
-      </Section>
-
-      <Section id="contact" title={content.contact.title} subtitle={content.contact.subtitle}>
-        <div className="grid gap-4 md:grid-cols-2">
-          {content.contact.items.map((c) => (
-            <a
-              key={c.label}
-              className="rounded-2xl border border-border bg-card p-6 shadow-sm hover:-translate-y-0.5 hover:shadow-md"
-              href={c.href}
-            >
-              <div className="flex items-center gap-3">
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-accentSoft text-accent">
-                  {c.icon === "gmail" ? (
-                    <svg viewBox="0 0 24 24" className="h-5 w-5" aria-hidden="true">
-                      <path
-                        fill="currentColor"
-                        d="M2 6.5C2 5.12 3.12 4 4.5 4h15C20.88 4 22 5.12 22 6.5v11c0 1.38-1.12 2.5-2.5 2.5h-15C3.12 20 2 18.88 2 17.5v-11zm2.2-.4 7.8 5.6 7.8-5.6a1.3 1.3 0 0 0-.8-.3h-14a1.3 1.3 0 0 0-.8.3zm15.6 12.3V8.1l-7.2 5.2a1 1 0 0 1-1.2 0l-7.2-5.2v10.3c0 .44.36.8.8.8h14.8c.44 0 .8-.36.8-.8z"
-                      />
-                    </svg>
-                  ) : null}
-                  {c.icon === "telegram" ? (
-                    <svg viewBox="0 0 24 24" className="h-5 w-5" aria-hidden="true">
-                      <path
-                        fill="currentColor"
-                        d="M21.6 4.6c.28-.1.58.08.64.37.04.18.01.37-.1.52L14 20.1c-.17.3-.56.4-.86.23l-3.9-2.22-2.5 2.5c-.23.23-.61.23-.84 0a.6.6 0 0 1-.17-.42v-3.7l9.2-8.4-11 6.2c-.27.15-.6.07-.77-.19a.6.6 0 0 1-.07-.49l2.3-8c.06-.2.22-.36.41-.42L21.6 4.6z"
-                      />
-                    </svg>
-                  ) : null}
-                  {c.icon === "linkedin" ? (
-                    <svg viewBox="0 0 24 24" className="h-5 w-5" aria-hidden="true">
-                      <path
-                        fill="currentColor"
-                        d="M4.5 3.9a1.6 1.6 0 1 1 0 3.2 1.6 1.6 0 0 1 0-3.2zM3.2 8.6h2.6V20H3.2V8.6zm6.1 0h2.5v1.6h.1c.4-.8 1.4-1.7 3-1.7 3.1 0 3.6 2 3.6 4.6V20h-2.6v-5.7c0-1.4 0-3.1-2-3.1s-2.3 1.5-2.3 3V20H9.3V8.6z"
-                      />
-                    </svg>
-                  ) : null}
-                </span>
-                <p className="text-sm font-semibold">{c.label}</p>
-              </div>
-              <p className="mt-1 text-sm text-muted">{c.value}</p>
-            </a>
-          ))}
         </div>
-      </Section>
-    </div>
+      </section>
+
+      <section className="contact" id="contact">
+        <div className="contact-left fade-up">
+          <div className="section-label">Contact</div>
+          <h2>Let&apos;s talk about your operations</h2>
+          <p>
+            If you&apos;re a startup or SMB that wants to implement AI properly — not just
+            &quot;try ChatGPT&quot; — I&apos;d be glad to explore how I can help. I work with teams
+            where there&apos;s a real operational problem to solve.
+          </p>
+        </div>
+        <div className="contact-links fade-up">
+          <a href="mailto:dudnyk.maksym@gmail.com" className="contact-link">
+            <div className="contact-link-icon">✉️</div>
+            <div className="contact-link-text">
+              <span className="contact-link-label">Email</span>
+              <span className="contact-link-val">dudnyk.maksym@gmail.com</span>
+            </div>
+          </a>
+          <a href="https://t.me/maxximilyan" className="contact-link" target="_blank" rel="noreferrer">
+            <div className="contact-link-icon">✈️</div>
+            <div className="contact-link-text">
+              <span className="contact-link-label">Telegram</span>
+              <span className="contact-link-val">@maxximilyan</span>
+            </div>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/maxim-dudnik"
+            className="contact-link"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div className="contact-link-icon">💼</div>
+            <div className="contact-link-text">
+              <span className="contact-link-label">LinkedIn</span>
+              <span className="contact-link-val">linkedin.com/in/maxim-dudnik</span>
+            </div>
+          </a>
+        </div>
+      </section>
+    </>
   );
 }
