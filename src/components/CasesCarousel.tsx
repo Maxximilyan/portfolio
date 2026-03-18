@@ -141,9 +141,11 @@ function wrapIndex(index: number, length: number) {
 
 function MetricCell({ metric, delay }: { metric: Metric; delay: number }) {
   const cellClass =
-    "rounded-xl border border-white/10 bg-[#1e1e1e] px-4 py-4 md:px-5 md:py-5";
-  const numClass = "font-serif-display text-2xl md:text-3xl leading-none text-[#c8f064]";
-  const labelClass = "mt-2 text-xs md:text-[13px] leading-snug text-[#888]";
+    "flex flex-col rounded-xl border border-white/10 bg-[#1e1e1e] px-4 py-4 md:px-5 md:py-5";
+  const numClass =
+    "block font-serif-display text-2xl md:text-3xl leading-none text-[#c8f064] whitespace-nowrap";
+  const labelClass =
+    "mt-2 block text-xs md:text-[13px] leading-snug text-[#888] break-words";
 
   if (metric.kind === "number") {
     return (
@@ -221,7 +223,7 @@ function CenterCard({ c }: { c: Case }) {
   return (
     <article className="w-full rounded-2xl border border-white/10 bg-[#161616] p-6 md:p-10">
       <div className="grid gap-8 md:grid-cols-2 md:gap-10">
-        <div>
+        <div className="min-w-0">
           <div className="font-serif-display text-7xl leading-none text-white/5">{c.num}</div>
 
           <div className="mt-4 flex flex-wrap gap-2">
@@ -257,7 +259,7 @@ function CenterCard({ c }: { c: Case }) {
           </div>
         </div>
 
-        <div className="flex flex-col">
+        <div className="flex min-w-0 flex-col">
           <div className="rounded-xl border border-white/10 bg-[#1e1e1e] p-5">
             <div className="text-[10px] font-bold uppercase tracking-[0.14em] text-[#888]">
               Before
@@ -361,4 +363,3 @@ export function CasesCarousel() {
     </div>
   );
 }
-
