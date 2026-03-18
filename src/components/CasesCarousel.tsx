@@ -12,8 +12,8 @@ export function CasesCarousel({ slides }: { slides: React.ReactNode[] }) {
 
   const sectionRef = useRef<HTMLElement | null>(null);
   const wheelAcc = useRef(0);
-  const wheelTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
-  const animTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+  const wheelTimer = useRef<number | null>(null);
+  const animTimer = useRef<number | null>(null);
 
   const maxIndex = useMemo(() => Math.max(0, slides.length - 1), [slides.length]);
 
@@ -26,7 +26,7 @@ export function CasesCarousel({ slides }: { slides: React.ReactNode[] }) {
       setIsAnimating(true);
       setCurrent(next);
 
-      window.clearTimeout(animTimer.current);
+      if (animTimer.current !== null) window.clearTimeout(animTimer.current);
       animTimer.current = window.setTimeout(() => setIsAnimating(false), 750);
     },
     [current, isAnimating, maxIndex],
@@ -46,7 +46,7 @@ export function CasesCarousel({ slides }: { slides: React.ReactNode[] }) {
       e.preventDefault();
       wheelAcc.current += e.deltaY;
 
-      window.clearTimeout(wheelTimer.current);
+      if (wheelTimer.current !== null) window.clearTimeout(wheelTimer.current);
       wheelTimer.current = window.setTimeout(() => {
         if (Math.abs(wheelAcc.current) > 40) {
           goTo(current + (wheelAcc.current > 0 ? 1 : -1));
@@ -61,8 +61,8 @@ export function CasesCarousel({ slides }: { slides: React.ReactNode[] }) {
 
   useEffect(() => {
     return () => {
-      window.clearTimeout(wheelTimer.current);
-      window.clearTimeout(animTimer.current);
+      if (wheelTimer.current !== null) window.clearTimeout(wheelTimer.current);
+      if (animTimer.current !== null) window.clearTimeout(animTimer.current);
     };
   }, []);
 

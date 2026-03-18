@@ -31,7 +31,7 @@ export function useCounterAnimation(
     return () => {
       if (rafId) cancelAnimationFrame(rafId);
     };
-  }, [isActive, target, duration]);
+  }, [isActive, target, duration, from]);
 
   return value;
 }
