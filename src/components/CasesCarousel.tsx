@@ -75,15 +75,17 @@ export function CasesCarousel({ slides }: { slides: React.ReactNode[] }) {
     <section ref={sectionRef} className="cases-carousel" aria-label="Cases carousel">
       <div className="cases-carousel-progress" style={{ width: `${progress}%` }} />
 
-      <div
-        className="cases-carousel-track"
-        style={{ transform: `translateX(-${current * 100}%)` }}
-      >
-        {slides.map((slide, i) => (
-          <div key={i} className="cases-carousel-slide">
-            {slide}
-          </div>
-        ))}
+      <div className="cases-carousel-viewport">
+        <div
+          className="cases-carousel-track"
+          style={{ transform: `translateX(-${current * 100}%)` }}
+        >
+          {slides.map((slide, i) => (
+            <div key={i} className="cases-carousel-slide">
+              {slide}
+            </div>
+          ))}
+        </div>
       </div>
 
       <div className="cases-carousel-dots" aria-label="Carousel navigation">
