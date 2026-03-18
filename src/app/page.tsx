@@ -1,4 +1,5 @@
 import { HomeCasesCarousel } from "@/components/HomeCasesCarousel";
+import { AnimatedInlineNumber } from "@/components/AnimatedInlineNumber";
 
 export default function HomePage() {
   return (
@@ -18,19 +19,19 @@ export default function HomePage() {
           </p>
           <div className="hero-stats">
             <div className="stat-item">
-              <span className="stat-num">83%</span>
+              <AnimatedInlineNumber to={83} suffix="%" className="stat-num" />
               <span className="stat-label">Team adoption rate</span>
             </div>
             <div className="stat-item">
-              <span className="stat-num">6+</span>
+              <AnimatedInlineNumber to={6} suffix="+" className="stat-num" />
               <span className="stat-label">Workdays saved / week</span>
             </div>
             <div className="stat-item">
-              <span className="stat-num">1,193</span>
+              <AnimatedInlineNumber to={1193} className="stat-num" />
               <span className="stat-label">Posts auto-analysed</span>
             </div>
             <div className="stat-item">
-              <span className="stat-num">4 yrs</span>
+              <AnimatedInlineNumber to={4} suffix=" yrs" className="stat-num" />
               <span className="stat-label">In operations &amp; automation</span>
             </div>
           </div>

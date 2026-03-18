@@ -3,17 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 import { useCounterAnimation } from "@/hooks/useCounterAnimation";
 
-interface Props {
-  value: number;
-  from?: number;
-  prefix?: string;
-  suffix?: string;
-  label: string;
-  delay?: number;
-  format?: "number" | "compact" | "none";
-}
+type Format = "number" | "compact" | "none";
 
-function formatValue(value: number, format: NonNullable<Props["format"]>) {
+function formatValue(value: number, format: Format) {
   if (format === "none") return String(value);
   if (format === "compact") {
     if (Math.abs(value) >= 1000) {
@@ -26,17 +18,25 @@ function formatValue(value: number, format: NonNullable<Props["format"]>) {
   return new Intl.NumberFormat("en-US").format(value);
 }
 
-export function AnimatedStat({
-  value,
+export function AnimatedInlineNumber({
+  to,
   from = 0,
   prefix = "",
   suffix = "",
-  label,
   delay = 0,
   format = "number",
-}: Props) {
+  className,
+}: {
+  to: number;
+  from?: number;
+  prefix?: string;
+  suffix?: string;
+  delay?: number;
+  format?: Format;
+  className?: string;
+}) {
   const [isActive, setIsActive] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -53,16 +53,14 @@ export function AnimatedStat({
     return () => observer.disconnect();
   }, [delay]);
 
-  const count = useCounterAnimation(value, 1400, isActive, from);
+  const current = useCounterAnimation(to, 1400, isActive, from);
 
   return (
-    <div ref={ref} className="stat-card">
-      <span className="stat-number">
-        {prefix}
-        {formatValue(count, format)}
-        {suffix}
-      </span>
-      <span className="stat-label">{label}</span>
-    </div>
+    <span ref={ref} className={className}>
+      {prefix}
+      {formatValue(current, format)}
+      {suffix}
+    </span>
   );
 }
+

@@ -4,10 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import { useCounterAnimation } from "@/hooks/useCounterAnimation";
 
 interface Props {
-  value: number;
-  from?: number;
-  prefix?: string;
-  suffix?: string;
+  from: number;
+  to: number;
   label: string;
   delay?: number;
   format?: "number" | "compact" | "none";
@@ -26,15 +24,7 @@ function formatValue(value: number, format: NonNullable<Props["format"]>) {
   return new Intl.NumberFormat("en-US").format(value);
 }
 
-export function AnimatedStat({
-  value,
-  from = 0,
-  prefix = "",
-  suffix = "",
-  label,
-  delay = 0,
-  format = "number",
-}: Props) {
+export function AnimatedRangeStat({ from, to, label, delay = 0, format = "number" }: Props) {
   const [isActive, setIsActive] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -53,16 +43,15 @@ export function AnimatedStat({
     return () => observer.disconnect();
   }, [delay]);
 
-  const count = useCounterAnimation(value, 1400, isActive, from);
+  const current = useCounterAnimation(to, 1400, isActive, from);
 
   return (
     <div ref={ref} className="stat-card">
       <span className="stat-number">
-        {prefix}
-        {formatValue(count, format)}
-        {suffix}
+        {formatValue(from, format)}→{formatValue(current, format)}
       </span>
       <span className="stat-label">{label}</span>
     </div>
   );
 }
+

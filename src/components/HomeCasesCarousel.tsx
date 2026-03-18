@@ -2,6 +2,7 @@
 
 import { CasesCarousel } from "@/components/CasesCarousel";
 import { AnimatedStat } from "@/components/AnimatedStat";
+import { AnimatedRangeStat } from "@/components/AnimatedRangeStat";
 
 export function HomeCasesCarousel() {
   const slides = [
@@ -109,22 +110,10 @@ export function HomeCasesCarousel() {
           </p>
         </div>
         <div className="impact-grid">
-          <div className="impact-item">
-            <span className="impact-num">1,193</span>
-            <span className="impact-desc">Posts analysed automatically to date</span>
-          </div>
-          <div className="impact-item">
-            <span className="impact-num">8</span>
-            <span className="impact-desc">Specialised AI agents working in parallel</span>
-          </div>
-          <div className="impact-item">
-            <span className="impact-num">17</span>
-            <span className="impact-desc">Subreddits monitored continuously</span>
-          </div>
-          <div className="impact-item">
-            <span className="impact-num">1 hire</span>
-            <span className="impact-desc">New role created to handle content output</span>
-          </div>
+          <AnimatedStat value={1193} label="Posts analysed automatically to date" delay={0} />
+          <AnimatedStat value={8} label="Specialised AI agents working in parallel" delay={120} />
+          <AnimatedStat value={17} label="Subreddits monitored continuously" delay={240} />
+          <AnimatedStat value={1} suffix=" hire" label="New role created to handle content output" delay={360} />
         </div>
       </div>
     </div>,
@@ -174,21 +163,15 @@ export function HomeCasesCarousel() {
           </p>
         </div>
         <div className="impact-grid">
-          <div className="impact-item">
-            <span className="impact-num">28→15</span>
-            <span className="impact-desc">Boards consolidated with active owners</span>
+          <AnimatedRangeStat from={28} to={15} label="Boards consolidated with active owners" delay={0} />
+          <AnimatedStat from={10} value={0} label="Incomplete tickets — enforced by the system" delay={120} />
+          <div className="stat-card">
+            <span className="stat-number">Full CFT</span>
+            <span className="stat-label">Every cross-functional team trained from day one</span>
           </div>
-          <div className="impact-item">
-            <span className="impact-num">0</span>
-            <span className="impact-desc">Incomplete tickets — enforced by the system</span>
-          </div>
-          <div className="impact-item">
-            <span className="impact-num">Full CFT</span>
-            <span className="impact-desc">Every cross-functional team trained from day one</span>
-          </div>
-          <div className="impact-item">
-            <span className="impact-num">Live</span>
-            <span className="impact-desc">Metrics dashboards on bugs, features, and cycle time</span>
+          <div className="stat-card">
+            <span className="stat-number">Live</span>
+            <span className="stat-label">Metrics dashboards on bugs, features, and cycle time</span>
           </div>
         </div>
       </div>
@@ -241,21 +224,24 @@ export function HomeCasesCarousel() {
           </p>
         </div>
         <div className="impact-grid">
-          <div className="impact-item">
-            <span className="impact-num">$0</span>
-            <span className="impact-desc">Replaced paid platforms with a custom-built solution</span>
+          <AnimatedStat
+            from={2000}
+            value={0}
+            prefix="$"
+            label="Replaced paid platforms with a custom-built solution"
+            delay={0}
+          />
+          <div className="stat-card">
+            <span className="stat-number">Multi-role</span>
+            <span className="stat-label">AI screens each candidate across all open positions</span>
           </div>
-          <div className="impact-item">
-            <span className="impact-num">Multi-role</span>
-            <span className="impact-desc">AI screens each candidate across all open positions</span>
+          <div className="stat-card">
+            <span className="stat-number">Auto</span>
+            <span className="stat-label">Email sequences triggered by hiring stage</span>
           </div>
-          <div className="impact-item">
-            <span className="impact-num">Auto</span>
-            <span className="impact-desc">Email sequences triggered by hiring stage</span>
-          </div>
-          <div className="impact-item">
-            <span className="impact-num">GDPR</span>
-            <span className="impact-desc">Fully compliant — EU &amp; US privacy law</span>
+          <div className="stat-card">
+            <span className="stat-number">GDPR</span>
+            <span className="stat-label">Fully compliant — EU &amp; US privacy law</span>
           </div>
         </div>
       </div>
@@ -304,21 +290,21 @@ export function HomeCasesCarousel() {
           </p>
         </div>
         <div className="impact-grid">
-          <div className="impact-item">
-            <span className="impact-num">4K→1.5K</span>
-            <span className="impact-desc">Documents cleaned and restructured</span>
+          <AnimatedRangeStat
+            from={4000}
+            to={1500}
+            format="compact"
+            label="Documents cleaned and restructured"
+            delay={0}
+          />
+          <AnimatedStat value={1} suffix=" index" label="Single entry point to all company knowledge" delay={120} />
+          <div className="stat-card">
+            <span className="stat-number">AI-ready</span>
+            <span className="stat-label">Clean data made AI bot possible and accurate</span>
           </div>
-          <div className="impact-item">
-            <span className="impact-num">1 index</span>
-            <span className="impact-desc">Single entry point to all company knowledge</span>
-          </div>
-          <div className="impact-item">
-            <span className="impact-num">AI-ready</span>
-            <span className="impact-desc">Clean data made AI bot possible and accurate</span>
-          </div>
-          <div className="impact-item">
-            <span className="impact-num">Faster</span>
-            <span className="impact-desc">Onboarding — new hires find answers independently</span>
+          <div className="stat-card">
+            <span className="stat-number">Faster</span>
+            <span className="stat-label">Onboarding — new hires find answers independently</span>
           </div>
         </div>
       </div>
