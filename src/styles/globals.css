@@ -556,6 +556,13 @@ nav {
   padding: 16px;
 }
 
+.stat-card {
+  background: rgba(200, 240, 100, 0.04);
+  border: 1px solid rgba(200, 240, 100, 0.12);
+  border-radius: 8px;
+  padding: 16px;
+}
+
 .impact-num {
   font-family: var(--serif);
   font-size: 1.6rem;
@@ -565,10 +572,27 @@ nav {
   margin-bottom: 4px;
 }
 
+.stat-number {
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  color: var(--accent);
+  display: block;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
 .impact-desc {
   font-size: 0.78rem;
   color: var(--muted);
   line-height: 1.4;
+}
+
+.stat-card .stat-label {
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.4;
+  text-transform: none;
+  letter-spacing: 0;
 }
 
 .what-i-did {

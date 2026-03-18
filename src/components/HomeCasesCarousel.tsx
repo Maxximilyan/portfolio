@@ -1,6 +1,7 @@
 "use client";
 
 import { CasesCarousel } from "@/components/CasesCarousel";
+import { AnimatedStat } from "@/components/AnimatedStat";
 
 export function HomeCasesCarousel() {
   const slides = [
@@ -55,22 +56,15 @@ export function HomeCasesCarousel() {
           </p>
         </div>
         <div className="impact-grid">
-          <div className="impact-item">
-            <span className="impact-num">22h</span>
-            <span className="impact-desc">Saved in the first 3 days with only 13 users</span>
-          </div>
-          <div className="impact-item">
-            <span className="impact-num">51</span>
-            <span className="impact-desc">Active users within one week of launch</span>
-          </div>
-          <div className="impact-item">
-            <span className="impact-num">480</span>
-            <span className="impact-desc">Messages per week at peak usage</span>
-          </div>
-          <div className="impact-item">
-            <span className="impact-num">6+ days</span>
-            <span className="impact-desc">Of human work saved every single week</span>
-          </div>
+          <AnimatedStat
+            value={22}
+            suffix="h"
+            label="Saved in the first 3 days with only 13 users"
+            delay={0}
+          />
+          <AnimatedStat value={51} label="Active users within one week of launch" delay={120} />
+          <AnimatedStat value={480} label="Messages per week at peak usage" delay={240} />
+          <AnimatedStat value={6} suffix="+ days" label="Of human work saved every single week" delay={360} />
         </div>
       </div>
     </div>,
@@ -346,4 +340,3 @@ export function HomeCasesCarousel() {
     </>
   );
 }
-
