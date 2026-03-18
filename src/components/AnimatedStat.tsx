@@ -11,6 +11,9 @@ interface Props {
   label: string;
   delay?: number;
   format?: "number" | "compact" | "none";
+  className?: string;
+  numberClassName?: string;
+  labelClassName?: string;
 }
 
 function formatValue(value: number, format: NonNullable<Props["format"]>) {
@@ -34,6 +37,9 @@ export function AnimatedStat({
   label,
   delay = 0,
   format = "number",
+  className,
+  numberClassName,
+  labelClassName,
 }: Props) {
   const [isActive, setIsActive] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -56,13 +62,13 @@ export function AnimatedStat({
   const count = useCounterAnimation(value, 1400, isActive, from);
 
   return (
-    <div ref={ref} className="stat-card">
-      <span className="stat-number">
+    <div ref={ref} className={className ?? "stat-card"}>
+      <span className={numberClassName ?? "stat-number"}>
         {prefix}
         {formatValue(count, format)}
         {suffix}
       </span>
-      <span className="stat-label">{label}</span>
+      <span className={labelClassName ?? "stat-label"}>{label}</span>
     </div>
   );
 }

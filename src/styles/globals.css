@@ -45,6 +45,14 @@ body {
   overflow-x: hidden;
 }
 
+.font-serif-display {
+  font-family: var(--serif);
+}
+
+.font-sans-body {
+  font-family: var(--sans);
+}
+
 ::selection {
   background: rgba(200, 240, 100, 0.18);
 }
@@ -355,118 +363,6 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 2px;
-}
-
-.cases-carousel {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: visible;
-}
-
-.cases-carousel-progress {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 2px;
-  background: var(--accent);
-  transition: width 0.1s linear;
-  z-index: 10;
-}
-
-.cases-carousel-viewport {
-  height: 100%;
-  overflow: hidden;
-  border-radius: 12px;
-}
-
-.cases-carousel-track {
-  display: flex;
-  height: 100%;
-  transition: transform 0.7s cubic-bezier(0.77, 0, 0.175, 1);
-  will-change: transform;
-}
-
-.cases-carousel-slide {
-  flex: 0 0 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px 0 64px;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-.cases-carousel-slide .case-card {
-  margin-bottom: 0;
-}
-
-.cases-carousel-dots {
-  position: absolute;
-  bottom: 22px;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  gap: 14px;
-  z-index: 10;
-}
-
-.cases-carousel-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.18);
-  border: none;
-  cursor: pointer;
-  transition: background 0.3s, transform 0.3s;
-}
-
-.cases-carousel-dot.is-active {
-  background: rgba(200, 240, 100, 0.85);
-  transform: scale(1.4);
-}
-
-.cases-carousel-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 56px;
-  height: 56px;
-  border-radius: 14px;
-  border: 1px solid rgba(200, 240, 100, 0.35);
-  background: rgba(200, 240, 100, 0.92);
-  color: #0e0e0e;
-  box-shadow:
-    0 10px 26px rgba(0, 0, 0, 0.42),
-    0 0 0 1px rgba(200, 240, 100, 0.08);
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-  z-index: 10;
-  font-weight: 700;
-  font-size: 20px;
-}
-
-.cases-carousel-arrow:hover {
-  transform: translateY(-50%) scale(1.04);
-  background: #d4f570;
-  box-shadow:
-    0 14px 34px rgba(0, 0, 0, 0.5),
-    0 0 0 1px rgba(200, 240, 100, 0.16);
-}
-
-.cases-carousel-arrow:disabled {
-  opacity: 0.35;
-  cursor: not-allowed;
-}
-
-.cases-carousel-arrow.is-left {
-  left: -72px;
-}
-
-.cases-carousel-arrow.is-right {
-  right: -72px;
 }
 
 .case-card {

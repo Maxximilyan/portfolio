@@ -1,5 +1,5 @@
-import { HomeCasesCarousel } from "@/components/HomeCasesCarousel";
 import { AnimatedInlineNumber } from "@/components/AnimatedInlineNumber";
+import { CasesCarousel } from "@/components/CasesCarousel";
 
 export default function HomePage() {
   return (
@@ -104,7 +104,16 @@ export default function HomePage() {
       </section>
 
       <section className="cases-section" id="cases">
-        <HomeCasesCarousel />
+        <div className="cases-header fade-up">
+          <div className="section-label">Selected Cases</div>
+          <h2>
+            Real problems. Real results.
+            <br />
+            All inside one 60-person company.
+          </h2>
+        </div>
+
+        <CasesCarousel />
       </section>
 
       <section className="approach">
