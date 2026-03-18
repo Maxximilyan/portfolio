@@ -359,101 +359,100 @@ nav {
 
 .cases-carousel {
   position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
 
-.carousel-controls {
+.cases-carousel-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.1s linear;
+  z-index: 10;
+}
+
+.cases-carousel-track {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 18px;
+  height: 100%;
+  transition: transform 0.7s cubic-bezier(0.77, 0, 0.175, 1);
+  will-change: transform;
 }
 
-.carousel-indicator {
+.cases-carousel-slide {
+  flex: 0 0 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  flex: 1;
+  padding: 16px 0 64px;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
-.carousel-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.03);
+.cases-carousel-slide .case-card {
+  margin-bottom: 0;
+}
+
+.cases-carousel-dots {
+  position: absolute;
+  bottom: 22px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  z-index: 10;
+}
+
+.cases-carousel-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  border: none;
   cursor: pointer;
-  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  transition: background 0.3s, transform 0.3s;
 }
 
-.carousel-dot:hover {
-  border-color: rgba(200, 240, 100, 0.2);
-  background: rgba(200, 240, 100, 0.06);
+.cases-carousel-dot.is-active {
+  background: rgba(200, 240, 100, 0.85);
+  transform: scale(1.4);
 }
 
-.carousel-dot.is-active {
-  background: rgba(200, 240, 100, 0.18);
-  border-color: rgba(200, 240, 100, 0.28);
-  transform: scale(1.2);
-}
-
-.carousel-btn {
-  width: 42px;
-  height: 42px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
+.cases-carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
   border: 1px solid var(--border);
-  background: var(--bg2);
+  background: rgba(22, 22, 22, 0.85);
   color: var(--text);
   cursor: pointer;
   transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
-  user-select: none;
+  z-index: 10;
 }
 
-.carousel-btn:hover {
+.cases-carousel-arrow:hover {
   border-color: rgba(200, 240, 100, 0.22);
-  transform: translateY(-1px);
+  background: rgba(22, 22, 22, 0.95);
 }
 
-.carousel-btn:disabled {
+.cases-carousel-arrow:disabled {
   opacity: 0.35;
   cursor: not-allowed;
-  transform: none;
 }
 
-.carousel-viewport {
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  border-radius: 12px;
-  outline: none;
+.cases-carousel-arrow.is-left {
+  left: 8px;
 }
 
-.carousel-viewport:focus-visible {
-  box-shadow: 0 0 0 3px rgba(200, 240, 100, 0.12);
-}
-
-.carousel-viewport::-webkit-scrollbar {
-  height: 0;
-}
-
-.carousel-track {
-  display: flex;
-  gap: 20px;
-}
-
-.carousel-slide {
-  flex: 0 0 100%;
-  scroll-snap-align: start;
-}
-
-.carousel-slide .case-card {
-  margin-bottom: 0;
+.cases-carousel-arrow.is-right {
+  right: 8px;
 }
 
 .case-card {
@@ -825,12 +824,11 @@ footer p {
     display: none;
   }
 
-  .carousel-controls {
-    gap: 10px;
+  .cases-carousel-slide {
+    padding: 8px 0 64px;
   }
 
-  .carousel-btn {
-    width: 40px;
-    height: 40px;
+  .cases-carousel-arrow {
+    display: none;
   }
 }

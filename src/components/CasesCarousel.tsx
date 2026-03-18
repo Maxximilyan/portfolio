@@ -7,115 +7,116 @@ function clamp(value: number, min: number, max: number) {
 }
 
 export function CasesCarousel({ slides }: { slides: React.ReactNode[] }) {
-  const viewportRef = useRef<HTMLDivElement | null>(null);
-  const rafRef = useRef<number | null>(null);
+  const [current, setCurrent] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
 
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [canPrev, setCanPrev] = useState(false);
-  const [canNext, setCanNext] = useState(slides.length > 1);
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const wheelAcc = useRef(0);
+  const wheelTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+  const animTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   const maxIndex = useMemo(() => Math.max(0, slides.length - 1), [slides.length]);
 
-  const updateStateFromScroll = useCallback(() => {
-    const viewport = viewportRef.current;
-    if (!viewport) return;
+  const goTo = useCallback(
+    (idx: number) => {
+      if (isAnimating) return;
+      const next = clamp(idx, 0, maxIndex);
+      if (next === current) return;
 
-    const pageWidth = viewport.clientWidth || 1;
-    const rawIndex = Math.round(viewport.scrollLeft / pageWidth);
-    const nextIndex = clamp(rawIndex, 0, maxIndex);
+      setIsAnimating(true);
+      setCurrent(next);
 
-    setActiveIndex(nextIndex);
-    setCanPrev(viewport.scrollLeft > 8);
-    setCanNext(viewport.scrollLeft < viewport.scrollWidth - viewport.clientWidth - 8);
-  }, [maxIndex]);
-
-  const scheduleUpdate = useCallback(() => {
-    if (rafRef.current) return;
-    rafRef.current = window.requestAnimationFrame(() => {
-      rafRef.current = null;
-      updateStateFromScroll();
-    });
-  }, [updateStateFromScroll]);
+      window.clearTimeout(animTimer.current);
+      animTimer.current = window.setTimeout(() => setIsAnimating(false), 750);
+    },
+    [current, isAnimating, maxIndex],
+  );
 
   useEffect(() => {
-    updateStateFromScroll();
-    const onResize = () => updateStateFromScroll();
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
-  }, [updateStateFromScroll]);
+    const el = sectionRef.current;
+    if (!el) return;
 
-  const scrollToIndex = useCallback(
-    (index: number) => {
-      const viewport = viewportRef.current;
-      if (!viewport) return;
+    const onWheel = (e: WheelEvent) => {
+      if (slides.length <= 1) return;
 
-      const targetIndex = clamp(index, 0, maxIndex);
-      viewport.scrollTo({ left: targetIndex * viewport.clientWidth, behavior: "smooth" });
-    },
-    [maxIndex],
-  );
+      const atStart = current === 0 && e.deltaY < 0;
+      const atEnd = current === maxIndex && e.deltaY > 0;
+      if (atStart || atEnd) return;
 
-  const onPrev = useCallback(() => scrollToIndex(activeIndex - 1), [activeIndex, scrollToIndex]);
-  const onNext = useCallback(() => scrollToIndex(activeIndex + 1), [activeIndex, scrollToIndex]);
+      e.preventDefault();
+      wheelAcc.current += e.deltaY;
+
+      window.clearTimeout(wheelTimer.current);
+      wheelTimer.current = window.setTimeout(() => {
+        if (Math.abs(wheelAcc.current) > 40) {
+          goTo(current + (wheelAcc.current > 0 ? 1 : -1));
+        }
+        wheelAcc.current = 0;
+      }, 50);
+    };
+
+    el.addEventListener("wheel", onWheel, { passive: false });
+    return () => el.removeEventListener("wheel", onWheel);
+  }, [current, goTo, maxIndex, slides.length]);
+
+  useEffect(() => {
+    return () => {
+      window.clearTimeout(wheelTimer.current);
+      window.clearTimeout(animTimer.current);
+    };
+  }, []);
+
+  const progress = useMemo(() => {
+    if (maxIndex === 0) return 100;
+    return (current / maxIndex) * 100;
+  }, [current, maxIndex]);
 
   return (
-    <div
-      className="cases-carousel"
-      role="region"
-      aria-label="Cases carousel"
-      onKeyDown={(event) => {
-        if (event.key === "ArrowLeft") onPrev();
-        if (event.key === "ArrowRight") onNext();
-      }}
-    >
-      <div className="carousel-controls" aria-hidden={slides.length <= 1}>
-        <button
-          className="carousel-btn"
-          type="button"
-          onClick={onPrev}
-          disabled={!canPrev}
-          aria-label="Previous case"
-        >
-          ←
-        </button>
-        <div className="carousel-indicator" aria-label="Carousel position">
-          {slides.map((_, i) => (
-            <button
-              key={i}
-              type="button"
-              className={i === activeIndex ? "carousel-dot is-active" : "carousel-dot"}
-              onClick={() => scrollToIndex(i)}
-              aria-label={`Go to case ${i + 1}`}
-              aria-current={i === activeIndex ? "true" : undefined}
-            />
-          ))}
-        </div>
-        <button
-          className="carousel-btn"
-          type="button"
-          onClick={onNext}
-          disabled={!canNext}
-          aria-label="Next case"
-        >
-          →
-        </button>
-      </div>
+    <section ref={sectionRef} className="cases-carousel" aria-label="Cases carousel">
+      <div className="cases-carousel-progress" style={{ width: `${progress}%` }} />
 
       <div
-        ref={viewportRef}
-        className="carousel-viewport"
-        onScroll={scheduleUpdate}
-        tabIndex={0}
+        className="cases-carousel-track"
+        style={{ transform: `translateX(-${current * 100}%)` }}
       >
-        <div className="carousel-track">
-          {slides.map((slide, index) => (
-            <div key={index} className="carousel-slide">
-              {slide}
-            </div>
-          ))}
-        </div>
+        {slides.map((slide, i) => (
+          <div key={i} className="cases-carousel-slide">
+            {slide}
+          </div>
+        ))}
       </div>
-    </div>
+
+      <div className="cases-carousel-dots" aria-label="Carousel navigation">
+        {slides.map((_, i) => (
+          <button
+            key={i}
+            type="button"
+            className={i === current ? "cases-carousel-dot is-active" : "cases-carousel-dot"}
+            onClick={() => goTo(i)}
+            aria-label={`Go to case ${i + 1}`}
+            aria-current={i === current ? "true" : undefined}
+          />
+        ))}
+      </div>
+
+      <button
+        type="button"
+        className="cases-carousel-arrow is-left"
+        onClick={() => goTo(current - 1)}
+        disabled={current === 0}
+        aria-label="Previous case"
+      >
+        ←
+      </button>
+      <button
+        type="button"
+        className="cases-carousel-arrow is-right"
+        onClick={() => goTo(current + 1)}
+        disabled={current === maxIndex}
+        aria-label="Next case"
+      >
+        →
+      </button>
+    </section>
   );
 }
-
