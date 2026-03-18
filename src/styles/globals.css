@@ -357,6 +357,105 @@ nav {
   gap: 2px;
 }
 
+.cases-carousel {
+  position: relative;
+}
+
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.carousel-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex: 1;
+}
+
+.carousel-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.03);
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.carousel-dot:hover {
+  border-color: rgba(200, 240, 100, 0.2);
+  background: rgba(200, 240, 100, 0.06);
+}
+
+.carousel-dot.is-active {
+  background: rgba(200, 240, 100, 0.18);
+  border-color: rgba(200, 240, 100, 0.28);
+  transform: scale(1.2);
+}
+
+.carousel-btn {
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg2);
+  color: var(--text);
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  user-select: none;
+}
+
+.carousel-btn:hover {
+  border-color: rgba(200, 240, 100, 0.22);
+  transform: translateY(-1px);
+}
+
+.carousel-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.carousel-viewport {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 12px;
+  outline: none;
+}
+
+.carousel-viewport:focus-visible {
+  box-shadow: 0 0 0 3px rgba(200, 240, 100, 0.12);
+}
+
+.carousel-viewport::-webkit-scrollbar {
+  height: 0;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 20px;
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+}
+
+.carousel-slide .case-card {
+  margin-bottom: 0;
+}
+
 .case-card {
   background: var(--bg2);
   border: 1px solid var(--border);
@@ -700,5 +799,14 @@ footer p {
   }
   .nav-links {
     display: none;
+  }
+
+  .carousel-controls {
+    gap: 10px;
+  }
+
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
   }
 }
